@@ -1,0 +1,430 @@
+@import url('../node_modules/react-mde/lib/styles/css/react-mde-all.css');
+@import url('https://fonts.googleapis.com/css?family=Cutive+Mono');
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+@import url('./css/bootstrap-molokai.css');
+@import url('./css/solarized-light.css');
+@import url('./css/solarized-dark.css');
+@import url('./css/github-markdown.css');
+@import url('./css/retro.css');
+
+:root {
+	--darkblue: #000033;
+	--aqua: #84CEEB;
+	--lightblue: #5AB9EA;
+	/* --gray: #C1C8E4; */
+	--purple: #8860D0;
+}
+
+section::before,
+section::after {
+	position: absolute;
+	content: '';
+	pointer-events: none;
+}
+
+section {
+	position: relative;
+	padding: 10em 10%;
+	color: #fff;
+	text-align: center;
+}
+
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	min-width: 100%;
+	font-family: 'Quicksand', sans-serif;
+}
+
+h2 {
+	color: white;
+}
+
+a {
+	color: white;
+}
+
+a:hover {
+	color: lightblue;
+	text-decoration: none;
+	transition: .5s;
+}
+
+input {
+	border: none;
+	font-size: 1.5em !important;
+}
+
+svg {
+	color: gray
+}
+
+ul {
+	list-style: none;
+}
+
+table {
+	table-layout: fixed;
+	width: 100%
+}
+
+td {
+	overflow-wrap: break-word;
+}
+
+.main-photo {
+	background-image: url("https://img1.wsimg.com/isteam/ip/450350c3-44ea-4c81-be69-6dae3eaed7d9/bf7496f8-01c1-44d4-b534-d19796038d65.jpg/:/rs=w:1600,h:600,cg:true,m/cr=w:1600,h:600,a:cc");
+	background-size: cover;
+}
+
+.main-photo-text {
+	padding: 200px 0 200px 0;
+	color: white;
+	text-align: center;
+}
+
+.narrow-section {
+	padding: 0 10% 0 10%;
+}
+
+
+
+
+
+
+
+
+
+
+.btn {
+	margin: 10px;
+}
+
+#header {
+	padding: 0 3%;
+}
+
+#header hr {
+	margin-left: -15px;
+	margin-right: -15px;
+}
+
+#footer {
+	z-index: 2;
+	padding: 3%;
+	background: linear-gradient(to top,purple 0,darkblue 100%);
+	/* bottom: 0; */
+	left: 0;
+	width: 100%
+}
+
+#footer .svg-inline--fa {
+	color: white;
+}
+
+#footer a {
+	padding: 5px;
+}
+
+.mde-text {
+	font-family: 'Cutive Mono', monospace;
+	font-size: 1em;
+}
+
+.react-mde {
+	border: none !important; 
+}
+
+.btn-primary{
+	background-color: purple;
+	border: purple;
+}
+
+.btn:hover{
+	background-color: darkblue;
+	border: darkblue;
+}
+
+.btn-default{
+	background-color: lightblue;
+	border: lightblue;
+}
+
+.btn-default:hover{
+	color:white;
+}
+
+.ss-style-doublediagonal {
+	z-index: 1;
+	padding-top: 6em;
+	background: white;
+	color: dimgrey;
+}
+
+.ss-style-doublediagonal::before,
+.ss-style-doublediagonal::after {
+	top: 0;
+	left: -25%;
+	z-index: -1;
+	width: 150%;
+	height: 75%;
+	background: inherit;
+	-webkit-transform: rotate(-2deg);
+	transform: rotate(-2deg);
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+}
+
+.ss-style-doublediagonal::before {
+	height: 50%;
+	background: purple;
+	-webkit-transform: rotate(-3deg);
+	transform: rotate(-3deg);
+	-webkit-transform-origin: 3% 0;
+	transform-origin: 3% 0;
+}
+
+.ss-style-doublediagonal-rev {
+	z-index: 1;
+	padding-top: 6em;
+	background: darkblue;
+}
+
+.ss-style-doublediagonal-rev::before,
+.ss-style-doublediagonal-rev::after {
+	top: -30%;
+	left: -25%;
+	z-index: -1;
+	width: 150%;
+	height: 75%;
+	background: inherit;
+	-webkit-transform: rotate(2deg);
+	transform: rotate(2deg);
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+}
+
+.ss-style-doublediagonal-rev::before {
+	height: 50%;
+	background: purple;
+	-webkit-transform: rotate(3deg);
+	transform: rotate(3deg);
+	-webkit-transform-origin: -3% 0;
+	transform-origin: -3% 0;
+}
+
+.react-router-modal__modal-open {
+	color: black;
+}
+
+.react-router-modal__modal-open a {
+	color: darkblue;
+}
+
+.Collapsible {
+	cursor: pointer;
+}
+
+.Collapsible__contentInner, ul {
+	padding: 0;
+}
+
+.is-closed:after {
+	content: ' ▼';
+}
+
+.is-open:after {
+	content: ' ▲';
+}
+
+section .svg-inline--fa {
+	color: dimgrey;
+}
+
+.settings-transition-enter {
+	opacity: 0.01;
+	max-height: 0;
+}
+
+.settings-transition-enter.settings-transition-enter-active {
+	opacity: 1;
+	max-height: 100px;
+	transition: all 500ms ease-in;
+}
+
+.settings-transition-leave {
+	opacity: 1;
+	max-height: auto;
+}
+
+.settings-transition-leave.settings-transition-leave-active {
+	opacity: 0.01;
+	max-height: 100px;
+	transition: all 500ms ease-in;
+}
+
+.react-router-modal__modal-open {
+	position: inherit;
+}
+
+.example-modal {
+	position: fixed;
+	top: 10%;
+	left: 50%;
+	transform: translate3d(-50%, -50%, 0);
+	background-color: white;
+	border-radius: 5px;
+	border: 1px solid #777;
+	padding: 2rem;
+	opacity: 0;
+}
+
+.example-modal-in  {
+	transition: opacity 0.5s ease-in;
+	opacity: 1 
+}
+
+.example-modal-out {
+	transition: opacity 0.3s ease-out;
+	opacity: 0
+}
+
+.example-backdrop {
+	background-color: black;
+	opacity: 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.example-backdrop-in  {
+	transition: opacity 0.3s ease-in;
+	opacity: 0.5;
+}
+
+.example-backdrop-out  {
+	transition: opacity 1.5s ease-out;
+	opacity: 0;
+}
+
+.made-by {
+	font-size: .75em;
+	background-color: purple;
+}
+
+.last-p {
+	padding-bottom: 150px;
+}
+
+
+/* >:( stupid recaptcha lib... */
+.recaptcha-wrapper > div > div > div {
+	height: auto !important;
+	width: auto !important;
+}
+
+/* desktop-specific */
+@media (min-width: 992px) {
+	.example-modal {
+		top: 50%;
+	}
+
+	.react-mde.fullscreen{
+		position: fixed;
+		width: 95%;
+		height: 95%;
+		top: 10px;
+		left: 10px;
+		transition: 2s;
+		/* overflow: scroll; */
+	}
+	
+	.unfullscreen-wrap {
+		position: fixed;
+		bottom: 10px;
+		right: 20px;
+	}
+
+	.note-list {
+		max-height: 100%;
+	}
+
+}
+
+/* mobile-specific */
+@media (max-width: 992px) {
+	body {
+		font-size: 1em;	
+	}
+
+	.example-modal {
+		width: 90%;
+		overflow: scroll;
+		max-height: 600px;
+		top: 325px;
+		left: 50%;
+	}
+	
+	.react-mde.fullscreen {
+		/* position: fixed; */
+		/* width: 90%; */
+		/* overflow: scroll; */
+		/* /1* height: 600px; *1/ */
+		/* top: 10px; */
+	}
+
+	.fullscreen-wrap{
+		position: fixed;
+	    width: 90%;
+		overflow: scroll;
+		top: 10px;
+		z-index: 2;
+	}
+
+	.unfullscreen-wrap {
+		position: fixed;
+		top: 10px;
+		z-index: 999;
+		right: 25px;
+		color: black
+	}
+
+	.unfullscreen-wrap span {
+	    color: grey;
+	    padding: 5px;
+	}
+
+	.first-row-after-rev{
+		margin-top: -200px;
+	}
+
+	.Collapsible__trigger{
+		margin-left: 100px;
+	}
+
+	.Collapsible__contentOuter{
+		text-align: right;
+	}
+
+	.slapnote-row {
+		display: block;
+	}
+
+	.ss-style-doublediagonal .col-12 {
+		padding-bottom:20px;
+	}
+
+	.ss-style-doublediagonal-rev .col-12 {
+		padding-bottom:20px;
+	}
+
+	.note-list {
+		max-height: 200px;
+	    overflow: scroll;
+	}
+}
+

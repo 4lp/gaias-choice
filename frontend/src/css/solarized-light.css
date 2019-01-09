@@ -1,0 +1,293 @@
+.solarized article,
+.solarized aside,
+.solarized details,
+.solarized figcaption,
+.solarized figure,
+.solarized footer,
+.solarized header,
+.solarized hgroup,
+.solarized nav,
+.solarized section,
+.solarized summary {
+  display: block;
+}
+.solarized audio,
+.solarized canvas,
+.solarized video {
+  display: inline-block;
+}
+.solarized audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+.solarized [hidden] {
+  display: none;
+}
+.solarized html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+.solarized {
+  color: #657b83;
+}
+.solarized a:focus {
+  outline: thin dotted;
+}
+.solarized a:active,
+.solarized a:hover {
+  outline: 0;
+}
+.solarized h1 {
+  font-size: 2em;
+}
+.solarized abbr[title] {
+  border-bottom: 1px dotted;
+}
+.solarized b,
+.solarized strong {
+  font-weight: bold;
+}
+.solarized dfn {
+  font-style: italic;
+}
+.solarized mark {
+  background: #ff0;
+  color: #000;
+}
+.solarized code,
+.solarized kbd,
+.solarized pre,
+.solarized samp {
+  font-family: monospace, serif;
+  font-size: 1em;
+}
+.solarized pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+.solarized q {
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+.solarized small {
+  font-size: 80%;
+}
+.solarized sub,
+.solarized sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.solarized sup {
+  top: -0.5em;
+}
+.solarized sub {
+  bottom: -0.25em;
+}
+.solarized img {
+  border: 0;
+}
+.solarized svg:not(:root) {
+  overflow: hidden;
+}
+.solarized figure {
+  margin: 0;
+}
+.solarized fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+.solarized legend {
+  border: 0;
+  padding: 0;
+}
+.solarized button,
+.solarized input,
+.solarized select,
+.solarized textarea {
+  font-family: inherit;
+  font-size: 100%;
+  margin: 0;
+}
+.solarized button,
+.solarized input {
+  line-height: normal;
+}
+.solarized button,
+.solarized html input[type="button"],
+.solarized input[type="reset"],
+.solarized input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+.solarized button[disabled],
+.solarized input[disabled] {
+  cursor: default;
+}
+.solarized input[type="checkbox"],
+.solarized input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+.solarized input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.solarized input[type="search"]::-webkit-search-cancel-button,
+.solarized input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+.solarized button::-moz-focus-inner,
+.solarized input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+.solarized textarea {
+  overflow: auto;
+  vertical-align: top;
+}
+.solarized table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.solarized html {
+  font-family: 'PT Sans', sans-serif;
+}
+.solarized pre,
+.solarized code {
+  font-family: 'Inconsolata', sans-serif;
+}
+.solarized h1,
+.solarized h2,
+.solarized h3,
+.solarized h4,
+.solarized h5,
+.solarized h6 {
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: 700;
+}
+
+.solarized {
+  background-color: #fdf6e3;
+  border: 1pt solid #93a1a1;
+}
+.solarized code {
+  background-color: #eee8d5;
+  padding: 2px;
+}
+.solarized a {
+  color: #b58900 !important;
+}
+.solarized a:visited {
+  color: #cb4b16;
+}
+.solarized a:hover {
+  color: #cb4b16;
+}
+.solarized h1 {
+  color: #d33682;
+}
+.solarized h2,
+.solarized h3,
+.solarized h4,
+.solarized h5,
+.solarized h6 {
+  color: #859900;
+}
+.solarized pre {
+  background-color: #fdf6e3;
+  color: #657b83;
+  border: 1pt solid #93a1a1;
+  padding: 1em;
+  box-shadow: 5pt 5pt 8pt #eee8d5;
+}
+.solarized pre code {
+  background-color: #fdf6e3;
+}
+.solarized h1 {
+  font-size: 2.8em;
+}
+.solarized h2 {
+  font-size: 2.4em;
+}
+.solarized h3 {
+  font-size: 1.8em;
+}
+.solarized h4 {
+  font-size: 1.4em;
+}
+.solarized h5 {
+  font-size: 1.3em;
+}
+.solarized h6 {
+  font-size: 1.15em;
+}
+.solarized .tag {
+  background-color: #eee8d5;
+  color: #d33682;
+  padding: 0 0.2em;
+}
+.solarized .todo,
+.solarized .next,
+.solarized .done {
+  color: #fdf6e3;
+  background-color: #dc322f;
+  padding: 0 0.2em;
+}
+.solarized .tag {
+  -webkit-border-radius: 0.35em;
+  -moz-border-radius: 0.35em;
+  border-radius: 0.35em;
+}
+.solarized .TODO {
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+  background-color: #2aa198;
+}
+.solarized .NEXT {
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+  background-color: #268bd2;
+}
+.solarized .ACTIVE {
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+  background-color: #268bd2;
+}
+.solarized .DONE {
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+  background-color: #859900;
+}
+.solarized .WAITING {
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+  background-color: #cb4b16;
+}
+.solarized .HOLD {
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+  background-color: #d33682;
+}
+.solarized .NOTE {
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+  background-color: #d33682;
+}
+.solarized .CANCELLED {
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
+  background-color: #859900;
+}
