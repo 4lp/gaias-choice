@@ -43,7 +43,7 @@ h2 {
 }
 
 a {
-	color: white;
+	/* color: white; */
 }
 
 a:hover {
@@ -89,6 +89,20 @@ td {
 	padding: 0 10% 0 10%;
 }
 
+.svg-inline--fa{
+	margin-left: 5px;
+}
+
+#header-spacer {
+	margin-top: 50px;
+}
+/*.dropdown:hover > .dropdown-menu {*/
+/*    display: block;*/
+/*}*/
+/*.dropdown > .dropdown-toggle:active {*/
+/*    /*Without this, clicking will make it sticky*/
+/*    pointer-events: none;*/
+/*}*/
 
 
 
@@ -225,6 +239,10 @@ td {
 
 .Collapsible {
 	cursor: pointer;
+}
+
+.Collapsible a {
+	color: black;
 }
 
 .Collapsible__contentInner, ul {

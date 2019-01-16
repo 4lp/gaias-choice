@@ -12,11 +12,36 @@
 		<script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
 		<script type="text/javascript">
 			jQuery( document ).ready(function( $ ) {
+				// enable tooltips
 				$('[data-toggle="tooltip"]').tooltip();
-				console.log('1')
+
+				// hover instead of click for dropdowns
+				function toggleDropdown (e) {
+					let _d = $(e.target).closest('.dropdown'),
+					_m = $('.dropdown-menu', _d);
+					setTimeout(function(){
+						let shouldOpen = e.type !== 'click' && _d.is(':hover');
+						_m.toggleClass('show', shouldOpen);
+						_d.toggleClass('show', shouldOpen);
+						$('[data-toggle="dropdown"]', _d).attr('aria-expanded', shouldOpen);
+					}, e.type === 'mouseleave' ? 100 : 0);
+				}
+
+				$('body')
+				  .on('mouseenter mouseleave','.dropdown',toggleDropdown)
+				  .on('click', '.dropdown-menu a', toggleDropdown);
 			})
 		</script>
-		<title>👋note</title>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131832771-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-131832771-1');
+		</script>
+		<title>Gaia's Choice</title>
 	</head>
 	<body>
 		<div id="root">
