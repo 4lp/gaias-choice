@@ -7,40 +7,18 @@ import { Provider, connect } from "react-redux";
 import gaiasApp from "./reducers";
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
-import Contact from './components/Contact';
+import ContactPage from './components/ContactPage';
 import 'react-router-modal/css/react-router-modal.css';
 import { ModalContainer, ModalRoute } from 'react-router-modal';
 import { LastLocationProvider, withLastLocation } from 'react-router-last-location';
 import Blog from "./components/Blog";
 import Products from "./components/Products";
+import ProductDetail from "./components/ProductDetail";
+import {products} from "./actions";
 
 let store = createStore(gaiasApp, applyMiddleware(thunk));
 
-{/*modal route hack :( */}
-class RenderBlocker extends React.Component {
-	shouldComponentUpdate(nextProps) {
-		return !nextProps.block;
-	}
-
-	render() {
-		return this.props.children;
-	}
-}
-
 class RootContainerComponent extends Component {
-	state = {
-		shouldPageUpdate: true,
-	}
-
-	componentDidMount() {
-	}
-
-	componentDidUpdate(prevProps) {
-		{/*if (prevProps !== this.props) {
-			const onModal = matchPath(window.location.pathname, { path: '/contact' }) !== null;
-			this.setState({ shouldPageUpdate: !onModal });
-		}*/}
-	}
 
 	AsyncRoute = ({component: ChildComponent, ...rest}) => {
 		return <Route {...rest} render={props => {
@@ -53,54 +31,52 @@ class RootContainerComponent extends Component {
 	}
 
 	render() {
-		let {AsyncRoute, lastLocation} = this;
+		let {AsyncRoute} = this;
 		return (
 			<BrowserRouter>
-			<LastLocationProvider>
 				<div>
 					<div>
-						<ModalRoute
-							parentPath={lastLocation} 
-							path="/contact" 
-							component={Contact} 
-							className='example-modal'
-		  				    inClassName='example-modal-in'
-						    outClassName='example-modal-out'
-							backdropClassName='example-backdrop'
-							backdropInClassName='example-backdrop-in'
-							backdropOutClassName='example-backdrop-out'
-							outDelay={500}
-						/>
-						<RenderBlocker block={!this.state.shouldPageUpdate}>
-							<Switch>
-								<AsyncRoute path="/blog" component={Blog} />
-								<AsyncRoute path="/products" component={Products} />
-								<AsyncRoute path="/" component={Home} />
-								<Route component={NotFound} />
-							</Switch>
-						</RenderBlocker>
+						<Switch>
+							<AsyncRoute path="/contact" component={ContactPage} />
+							<AsyncRoute path="/blog" component={Blog} />
+							<Route exact path="/products" render={(props) => ( <Products products={this.props.products}/> )} />
+							<Route path="/products/:productname" render={(props) => ( <ProductDetail products={this.props.products} {...props}/> )} />
+							<AsyncRoute path="/" component={Home} />
+							<Route component={NotFound} />
+						</Switch>
 					</div>
 					<div>
 						<ModalContainer />
 					</div>
 				</div>
-			</LastLocationProvider>
 			</BrowserRouter>
 		);
 	}
 }
 
+
 const mapStateToProps = state => {
+	let errors = [];
+	if (state.products.errors) {
+		errors = Object.keys(state.products.errors).map(field => {
+			return {field, message: state.products.errors[field]};
+		});
+	}
 	return {
+		products: state.products,
+		errors
 	}
 }
 
 const mapDispatchToProps = dispatch => {
 	return {
+		fetchProducts: () => {
+			dispatch(products.fetchProducts());
+	    },
 	}
 }
 
-let RootContainer = connect(mapStateToProps, mapDispatchToProps)(RootContainerComponent);
+let RootContainer = connect(mapStateToProps, mapDispatchToProps)(RootContainerComponent)
 
 export default class App extends Component {
 	render() {

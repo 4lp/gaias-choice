@@ -1,31 +1,23 @@
 import Header from "./Header";
+import ProductDetail from "./ProductDetail";
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 
-class Home extends Component {
-	state = {
-	}
+export default class Products extends Component {
 
 	render(){
 		return(
 			<div>
 				<Header />
-				Various product categories
+					{this.props.products.map((product) => (
+						<div>
+							<Link to={"/products/"+product.path}>{product.name}</Link>
+						</div>
+					))}
 			</div>
 		)
 	}
 
 }
 
-const mapStateToProps = state => {
-	return {
-	}
-}
-
-const mapDispatchToProps = dispatch => {
-	return {
-	}
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home);

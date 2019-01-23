@@ -1,15 +1,20 @@
 from .models import Blogpost 
+from .models import Product 
 from rest_framework import viewsets, permissions, generics
 from rest_framework.response import Response
 from django import forms
 from django.core.mail import send_mail, BadHeaderError
 from django.conf import settings
-from .serializers import (BlogpostSerializer, ContactEmailSerializer)
+from .serializers import (BlogpostSerializer, ContactEmailSerializer, ProductSerializer)
 
 
 class BlogpostViewSet(viewsets.ModelViewSet):
     serializer_class = BlogpostSerializer
     queryset = Blogpost.objects.all().order_by('-created_at')
+
+class ProductViewSet(viewsets.ModelViewSet):
+    serializer_class = ProductSerializer
+    queryset = Product.objects.all()
 
 class ContactEmailAPI(generics.GenericAPIView):
     serializer_class = ContactEmailSerializer

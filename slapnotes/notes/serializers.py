@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from .models import Blogpost
+from .models import Product 
 from django.conf import settings
 import requests
 
@@ -7,6 +8,12 @@ class BlogpostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Blogpost
         fields = ('id', 'text', 'title', 'created_at', 'owner' )
+        
+class ProductSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Product 
+        fields = ('id', 'name', 'description', 'images', 'path' )
+
 
 class ContactEmailSerializer(serializers.Serializer):
     name = serializers.CharField(required=True)

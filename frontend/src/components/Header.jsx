@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import Collapsible from 'react-collapsible';
+import {connect} from 'react-redux';
+import {products} from "../actions";
 
 
-export default class Header extends Component {
+class Header extends Component {
+	componentDidMount() {
+		if (!this.props.products.length){
+	    	this.props.fetchProducts();
+		}
+	}	
+
 	render(){
 		return(
 			<div>
@@ -20,15 +28,6 @@ export default class Header extends Component {
 							</div>
 							<div className="clearfix"></div>
 							<Link to="/" className="nav-brand col-3" style={{color: "black"}}><h4>Gaia&apos;s Choice</h4></Link>
-					{/*<Collapsible trigger="Menu"> 
-									<ul>
-										<li><Link to="/">Home</Link></li>
-										<li><Link to="/blog">Blog</Link></li>
-										<li><Link to="/products">Products</Link></li>
-										<li><Link to="https://shop.medicalmarijuanainc.com/">Shop</Link></li>
-										<li><Link to="/contact">Contact Us</Link></li>
-									</ul>
-								</Collapsible>*/}
 							<div className="collapse navbar-collapse col-9">
 								<ul className="navbar-nav mr-auto mt-2 mt-lg-0 flex-row">
 									<li className="nav-item active"><Link to="/" className="nav-link">Home</Link></li>
@@ -37,12 +36,11 @@ export default class Header extends Component {
 											Products
 										</a>
 										<div className="dropdown-menu" aria-labelledby="navbarDropdown">
-										  <a className="dropdown-item" href="#">Butter</a>
-										  <a className="dropdown-item" href="#">Gummies</a>
-										  <a className="dropdown-item" href="#">Honey</a>
-										  <a className="dropdown-item" href="#">Love Butter</a>
-										  <a className="dropdown-item" href="#">Tincture</a>
-										  <a className="dropdown-item" href="#">Vape Juice</a>
+											{this.props.products.map((product) => (
+												<div>
+													<a className="dropdown-item" href={"/products/"+product.path}>{product.name}</a>
+												</div>
+											))}
 										</div>
 									</li>
 									<li className="nav-item dropdown">
@@ -79,3 +77,26 @@ export default class Header extends Component {
 		)
 	}
 }
+
+const mapStateToProps = state => {
+	let errors = [];
+	if (state.products.errors) {
+		errors = Object.keys(state.products.errors).map(field => {
+			return {field, message: state.products.errors[field]};
+		});
+	}
+	return {
+		products: state.products,
+		errors
+	}
+}
+
+const mapDispatchToProps = dispatch => {
+	return {
+		fetchProducts: () => {
+			dispatch(products.fetchProducts());
+	    },
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header)

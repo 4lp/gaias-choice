@@ -67,8 +67,6 @@ class Contact extends Component {
 						{!this.state.submitStatus || this.props.errors.length ?
 							<div>
 								<form onSubmit={this.onSubmit} className={this.props.errors.length && this.state.submitStatus ? "animated shake" : null}>
-									<p style={{padding: '20px'}}>Have any questions or concerns? Contact us using the form below and we will get back to you ASAP!</p>
-									<hr />
 									<fieldset>
 									{this.props.errors && this.state.submitStatus && (
 										<Errors errors={this.props.errors} />
@@ -88,11 +86,35 @@ class Contact extends Component {
 										<label htmlFor="reply">Your reply email</label>
 										<input 
 											className="form-control" 
-											reply="reply" 
+											name="reply" 
 											id="reply" 
 											onChange={e => this.setState({reply: e.target.value})}
 											value={this.state.reply}
 											type="text"
+										/>
+									</div>
+									<div className="form-group">
+										<label htmlFor="phone">Your phone number (xxx-xxx-xxxx)</label>
+										<input 
+											className="form-control" 
+											name="phone" 
+											id="phone" 
+											onChange={e => this.setState({phone: e.target.value})}
+											value={this.state.phone}
+											type="tel"
+											pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+										/>
+									</div>
+									<div className="form-group">
+										<label htmlFor="zip">Your zip code</label>
+										<input 
+											className="form-control" 
+											name="zip" 
+											id="zip" 
+											onChange={e => this.setState({zip: e.target.value})}
+											value={this.state.zip}
+											type="number"
+											max="5"
 										/>
 									</div>
 									<div className="form-group">

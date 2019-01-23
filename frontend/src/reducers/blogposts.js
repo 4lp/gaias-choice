@@ -1,8 +1,7 @@
 const initialState = [];
 
 
-export default function notes(state=initialState, action) {
-	let noteList = state.slice();
+export default function blogposts(state=initialState, action) {
 
 	switch (action.type) {
 		case 'FETCH_BLOGPOSTS':
