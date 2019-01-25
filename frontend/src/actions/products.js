@@ -21,7 +21,7 @@ export const fetchProducts = () => {
 
 		return fetch("/api/product/", {headers, })
 			.then(res => {
-				if (res.status < 500) {
+				if (res.status < 499) {
 					return res.json().then(data => {
 						return {status: res.status, data};
 					})

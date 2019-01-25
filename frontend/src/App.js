@@ -20,6 +20,12 @@ let store = createStore(gaiasApp, applyMiddleware(thunk));
 
 class RootContainerComponent extends Component {
 
+	componentDidMount() {
+		if (!this.props.products.length){
+	    	this.props.fetchProducts();
+		}
+	}	
+
 	AsyncRoute = ({component: ChildComponent, ...rest}) => {
 		return <Route {...rest} render={props => {
 			{/*{if (this.props.auth.isLoading) {
@@ -32,25 +38,29 @@ class RootContainerComponent extends Component {
 
 	render() {
 		let {AsyncRoute} = this;
-		return (
-			<BrowserRouter>
-				<div>
+		if (!this.props.products.isLoading){
+			return (
+				<BrowserRouter>
 					<div>
-						<Switch>
-							<AsyncRoute path="/contact" component={ContactPage} />
-							<AsyncRoute path="/blog" component={Blog} />
-							<Route exact path="/products" render={(props) => ( <Products products={this.props.products}/> )} />
-							<Route path="/products/:productname" render={(props) => ( <ProductDetail products={this.props.products} {...props}/> )} />
-							<AsyncRoute path="/" component={Home} />
-							<Route component={NotFound} />
-						</Switch>
+						<div>
+							<Switch>
+								<AsyncRoute path="/contact" component={ContactPage} />
+								<AsyncRoute path="/blog" component={Blog} />
+								<Route exact path="/products" render={(props) => ( <Products products={this.props.products}/> )} />
+								<Route path="/products/:productname" render={(props) => ( <ProductDetail products={this.props.products} {...props}/> )} />
+								<AsyncRoute path="/" component={Home} />
+								<Route component={NotFound} />
+							</Switch>
+						</div>
+						<div>
+							<ModalContainer />
+						</div>
 					</div>
-					<div>
-						<ModalContainer />
-					</div>
-				</div>
-			</BrowserRouter>
-		);
+				</BrowserRouter>
+			);
+		} else {
+			return(<div>Loading...</div>)
+		}
 	}
 }
 

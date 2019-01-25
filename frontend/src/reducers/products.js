@@ -1,5 +1,8 @@
-const initialState = [];
-
+// const initialState = [];
+const initialState = {
+	isLoading: true,
+	products: null 
+}
 
 export default function products(state=initialState, action) {
 
@@ -8,7 +11,7 @@ export default function products(state=initialState, action) {
 			return {...state, isLoading: true}
 
 		case 'FETCH_PRODUCTS':
-		    return [...state, ...action.products];
+		    return {...state, products: action.products, isLoading: false};
 
 		default:
 			return state;
