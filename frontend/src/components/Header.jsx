@@ -34,7 +34,7 @@ class Header extends Component {
 									<ul className="navbar-nav mr-auto mt-2 mt-lg-0 flex-row">
 										<li className="nav-item active"><Link to="/" className="nav-link">Home</Link></li>
 										<li className="nav-item dropdown">
-											<a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											<a className="nav-link dropdown-toggle" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false" href="/products">
 												Products
 											</a>
 											<div className="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -67,7 +67,7 @@ class Header extends Component {
 											</div>
 										</li>
 										<li className="nav-item active"><Link to="/blog" className="nav-link">Blog</Link></li>
-										<li className="nav-item active"><Link to="https://shop.medicalmarijuanainc.com/" className="nav-link">Shop</Link></li>
+										<li className="nav-item active"><a href="https://shop.medicalmarijuanainc.com/" className="nav-link" target="_blank">Shop</a></li>
 										<li className="nav-item active"><Link to="/contact" className="nav-link">Contact Us</Link></li>
 									</ul>
 								</div>
