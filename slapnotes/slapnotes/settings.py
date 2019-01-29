@@ -52,6 +52,9 @@ INSTALLED_APPS = [
     'notes.apps.NotesConfig',
     'knox',
     'rest_framework',
+    'dynamic_preferences',
+    # comment the following line if you don't want to use user preferences
+    # 'dynamic_preferences.users.apps.UserPreferencesConfig',
 ]
 
 REST_FRAMEWORK = {

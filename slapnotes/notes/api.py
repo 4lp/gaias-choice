@@ -1,12 +1,13 @@
 from .models import Blogpost 
 from .models import Product 
+from .models import CarouselImage
 from rest_framework import viewsets, permissions, generics
 from rest_framework.response import Response
 from django import forms
 from django.core.mail import send_mail, BadHeaderError
 from django.conf import settings
-from .serializers import (BlogpostSerializer, ContactEmailSerializer, ProductSerializer)
-
+from .serializers import (BlogpostSerializer, ContactEmailSerializer, ProductSerializer,
+        CarouselImageSerializer)
 
 class BlogpostViewSet(viewsets.ModelViewSet):
     serializer_class = BlogpostSerializer
@@ -15,6 +16,10 @@ class BlogpostViewSet(viewsets.ModelViewSet):
 class ProductViewSet(viewsets.ModelViewSet):
     serializer_class = ProductSerializer
     queryset = Product.objects.all()
+
+class CarouselImageViewSet(viewsets.ModelViewSet):
+    serializer_class = CarouselImageSerializer
+    queryset = CarouselImage.objects.all()
 
 class ContactEmailAPI(generics.GenericAPIView):
     serializer_class = ContactEmailSerializer

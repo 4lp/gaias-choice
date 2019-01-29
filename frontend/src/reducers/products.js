@@ -1,4 +1,3 @@
-// const initialState = [];
 const initialState = {
 	isLoading: true,
 	products: null 

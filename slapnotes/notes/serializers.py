@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from .models import Blogpost
+from .models import CarouselImage 
 from .models import Product 
 from django.conf import settings
 import requests
@@ -14,6 +15,10 @@ class ProductSerializer(serializers.ModelSerializer):
         model = Product 
         fields = ('id', 'name', 'description', 'images', 'path' )
 
+class CarouselImageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CarouselImage 
+        fields = ('id', 'name', 'image')
 
 class ContactEmailSerializer(serializers.Serializer):
     name = serializers.CharField(required=True)

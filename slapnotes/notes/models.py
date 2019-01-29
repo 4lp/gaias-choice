@@ -21,3 +21,9 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
+class CarouselImage(models.Model):
+    name = models.CharField(max_length=255, default='')
+    image = models.TextField()
+ 
+    def __str__(self):
+        return self.name
