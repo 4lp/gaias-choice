@@ -2,10 +2,11 @@ import { combineReducers } from 'redux';
 import blogposts from "./blogposts";
 import products from "./products";
 import email from "./email";
+import settings from "./settings";
 import carouselImages from "./carouselimages";
 
 const gaiasApp = combineReducers({
-	blogposts, email, products, carouselImages
+	blogposts, email, products, carouselImages, settings
 })
 
 const rootReducer = (state, action) => {
