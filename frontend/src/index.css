@@ -1,11 +1,6 @@
 @import url('../node_modules/react-mde/lib/styles/css/react-mde-all.css');
 @import url('https://fonts.googleapis.com/css?family=Cutive+Mono');
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
-@import url('./css/bootstrap-molokai.css');
-@import url('./css/solarized-light.css');
-@import url('./css/solarized-dark.css');
-@import url('./css/github-markdown.css');
-@import url('./css/retro.css');
 
 :root {
 	--darkblue: #000033;
@@ -36,6 +31,8 @@ body {
 	font-family: sans-serif;
 	min-width: 100%;
 	font-family: 'Quicksand', sans-serif;
+	background-image: url('https://www.rpnation.com/gallery/parchment-paper-div-test.33588/full');
+	background-repeat: repeat;
 }
 
 h2 {
@@ -74,9 +71,20 @@ td {
 	overflow-wrap: break-word;
 }
 
+p{
+    background-color: rgb(255,255,255,0.5);
+    padding: 20px;
+}
+
+.promo {
+	background-color: red;
+	color: white;
+}
 .main-photo {
 	background-image: url("https://img1.wsimg.com/isteam/ip/450350c3-44ea-4c81-be69-6dae3eaed7d9/bf7496f8-01c1-44d4-b534-d19796038d65.jpg/:/rs=w:1600,h:600,cg:true,m/cr=w:1600,h:600,a:cc");
-	background-size: cover;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
 .main-photo-text {

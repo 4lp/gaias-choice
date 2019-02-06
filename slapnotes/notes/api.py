@@ -1,4 +1,5 @@
 from .models import Blogpost 
+from .models import BlogCategory 
 from .models import Product 
 from .models import CarouselImage
 from rest_framework import viewsets, permissions, generics
@@ -6,12 +7,19 @@ from rest_framework.response import Response
 from django import forms
 from django.core.mail import send_mail, BadHeaderError
 from django.conf import settings
+from django_filters import rest_framework
 from .serializers import (BlogpostSerializer, ContactEmailSerializer, ProductSerializer,
-        CarouselImageSerializer)
+        CarouselImageSerializer, BlogCategorySerializer)
+
+class BlogCategoryViewSet(viewsets.ModelViewSet):
+    serializer_class = BlogCategorySerializer
+    queryset = BlogCategory.objects.all()
 
 class BlogpostViewSet(viewsets.ModelViewSet):
     serializer_class = BlogpostSerializer
     queryset = Blogpost.objects.all().order_by('-created_at')
+    filter_backends = (rest_framework.DjangoFilterBackend,)
+    filter_fields = ('categories',)
 
 class ProductViewSet(viewsets.ModelViewSet):
     serializer_class = ProductSerializer

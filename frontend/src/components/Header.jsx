@@ -19,6 +19,9 @@ class Header extends Component {
 					<nav id="header" className="navbar fixed-top navbar-expand-lg navbar-light bg-light">
 						<div className="container">
 							<div className="row">
+								<div className="promo col-12 text-center">
+									<p>Butter is discounted!</p>
+								</div>
 								<div className="socials col-12">
 									<a target="_blank" href="https://twitter.com/ChooseGaias"><i className="fab fa-twitter-square"></i></a>
 									<a target="_blank" href="https://www.instagram.com/choosegaias/"><i className="fab fa-instagram"></i></a>

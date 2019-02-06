@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
-import os, json
+import os, json, django_filters
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'knox',
     'rest_framework',
     'dynamic_preferences',
+    'django_filters',
     # comment the following line if you don't want to use user preferences
     # 'dynamic_preferences.users.apps.UserPreferencesConfig',
 ]
@@ -148,9 +149,13 @@ WEBPACK_LOADER = {
     }
 }
 
-REST_AUTH_SERIALIZERS = {
-    'PASSWORD_RESET_SERIALIZER': 
-        'yourproject_app.serializers.PasswordResetSerializer',
+# REST_AUTH_SERIALIZERS = {
+#     'PASSWORD_RESET_SERIALIZER': 
+#         'yourproject_app.serializers.PasswordResetSerializer',
+# }
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',)
 }
 
 # LOGOUT_ON_PASSWORD_CHANGE = False

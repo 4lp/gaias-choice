@@ -1,19 +1,27 @@
 from rest_framework import serializers
 from .models import Blogpost
+from .models import BlogCategory
 from .models import CarouselImage 
 from .models import Product 
 from django.conf import settings
 import requests
 
+class BlogCategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = BlogCategory
+        fields = ('id', 'name')
+
 class BlogpostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Blogpost
-        fields = ('id', 'text', 'title', 'created_at', 'owner' )
+        fields = ('id', 'text', 'title', 'created_at', 'owner', 
+                'categories')
         
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product 
-        fields = ('id', 'name', 'description', 'images', 'path' )
+        fields = ('id', 'name', 'description', 'images', 'path', 
+                'is_discounted' , 'discount_amount', 'reviews')
 
 class CarouselImageSerializer(serializers.ModelSerializer):
     class Meta:
@@ -36,7 +44,8 @@ class ContactEmailSerializer(serializers.Serializer):
                 'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
                 'response': recaptcha_response
             }
-            r = requests.post('https://www.google.com/recaptcha/api/siteverify', data=captcha_data)
+            r = requests.post('https://www.google.com/recaptcha/api/siteverify', 
+                    data=captcha_data)
             result = r.json()
             if result['success']:
                 return data

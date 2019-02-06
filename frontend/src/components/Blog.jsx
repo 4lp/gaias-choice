@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import Header from "./Header";
 import {blogposts} from "../actions";
+import {blogcategories} from "../actions";
 
 class Blog extends Component {
 	state = {
@@ -11,6 +12,7 @@ class Blog extends Component {
 	componentDidMount() {
 		if (!this.props.blogposts.length){
 	    	this.props.fetchBlogposts();
+	    	this.props.fetchBlogCategories();
 		}
 	}	
 	
@@ -18,14 +20,27 @@ class Blog extends Component {
 		return(
 			<div>
 				<Header />
-				{this.props.blogposts.map((blogpost) => (
-					<div>
-						<h4>{blogpost.title}</h4>
-						<p>{blogpost.text}</p>
-						<p>{blogpost.owner}</p>
-						<p>{blogpost.created_at}</p>
+				<div className="container">
+					<div className="row">
+						<div className="col-9">
+							{this.props.blogposts.map((blogpost) => (
+								<div>
+									<h4>{blogpost.title}</h4>
+									<p>{blogpost.text}</p>
+									<p>{blogpost.owner}</p>
+									<p>{blogpost.created_at}</p>
+								</div>
+							))}
+						</div>
+						<div className="col-3">
+							{this.props.blogcategories.map((category) => (
+								<div>
+									<h4>{category.name}</h4>
+								</div>
+							))}
+						</div>
 					</div>
-				))}
+				</div>
 			</div>
 		)
 	}
@@ -38,8 +53,14 @@ const mapStateToProps = state => {
 			return {field, message: state.blogposts.errors[field]};
 		});
 	}
+	if (state.blogcategories.errors) {
+		errors = [...errors, Object.keys(state.blogcategories.errors).map(field => {
+			return {field, message: state.blogcategories.errors[field]};
+		})];
+	}
 	return {
 		blogposts: state.blogposts,
+		blogcategories: state.blogcategories,
 		errors
 	}
 }
@@ -49,6 +70,10 @@ const mapDispatchToProps = dispatch => {
 		fetchBlogposts: () => {
 			dispatch(blogposts.fetchBlogposts());
 	    },
+		fetchBlogCategories: () => {
+			dispatch(blogcategories.fetchBlogCategories());
+	    },
+
 	}
 }
 
