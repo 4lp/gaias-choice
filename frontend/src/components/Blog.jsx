@@ -7,6 +7,7 @@ import {blogcategories} from "../actions";
 
 class Blog extends Component {
 	state = {
+		category: null
 	}
 
 	componentDidMount() {
@@ -15,34 +16,44 @@ class Blog extends Component {
 	    	this.props.fetchBlogCategories();
 		}
 	}	
+
+	handleCategoryClick(category) {
+		this.setState({category: category});
+		this.props.fetchBlogposts(category);
+	}
 	
 	render(){
-		return(
-			<div>
-				<Header />
-				<div className="container">
-					<div className="row">
-						<div className="col-9">
-							{this.props.blogposts.map((blogpost) => (
-								<div>
-									<h4>{blogpost.title}</h4>
-									<p>{blogpost.text}</p>
-									<p>{blogpost.owner}</p>
-									<p>{blogpost.created_at}</p>
-								</div>
-							))}
-						</div>
-						<div className="col-3">
-							{this.props.blogcategories.map((category) => (
-								<div>
-									<h4>{category.name}</h4>
-								</div>
-							))}
+		if (!this.props.blogposts.isLoading){
+			return(
+				<div>
+					<Header />
+					<div className="container">
+						<div className="row">
+							<div className="col-9">
+								{this.props.blogposts.blogposts.map((blogpost) => (
+									<div key={blogpost.id}>
+										<h4>{blogpost.title}</h4>
+										<p>{blogpost.text}</p>
+										<p>{blogpost.owner}</p>
+										<p>{blogpost.created_at}</p>
+									</div>
+								))}
+							</div>
+							<div className="col-3">
+								<a href="#" onClick={()=>{this.handleCategoryClick(undefined)}}>All</a>
+								{this.props.blogcategories.map((category) => (
+									<div>
+										<a href="#" onClick={()=>{this.handleCategoryClick(category.id)}}>{category.name}</a>
+									</div>
+								))}
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		)
+			)
+		} else {
+			return(<div>Loading...</div>)
+		}
 	}
 }
 
@@ -67,8 +78,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
 	return {
-		fetchBlogposts: () => {
-			dispatch(blogposts.fetchBlogposts());
+		fetchBlogposts: (category) => {
+			dispatch(blogposts.fetchBlogposts(category));
 	    },
 		fetchBlogCategories: () => {
 			dispatch(blogcategories.fetchBlogCategories());

@@ -13,13 +13,21 @@ function getCookie(name) {
 	return cookieValue;
 }
 
-export const fetchBlogposts = () => {
+export const fetchBlogposts = (category) => {
 	return (dispatch, getState) => {
 		let csrftoken = getCookie('csrftoken');
 		
 		let headers = {"Content-Type": "application/json", "X-CSRFToken": csrftoken};
 
-		return fetch("/api/blogpost/", {headers, })
+
+		let queryString = '';
+
+		if (typeof category !== 'undefined') {
+			queryString = "?categories=" + category;
+		}
+		console.log(category)
+
+		return fetch("/api/blogpost/" + queryString, {headers, })
 			.then(res => {
 				if (res.status < 500) {
 					return res.json().then(data => {

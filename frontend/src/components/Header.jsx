@@ -6,17 +6,22 @@ import {products} from "../actions";
 
 
 class Header extends Component {
+	state = {
+		headerHeight: 0 
+	}
 	componentDidMount() {
 		if (!this.props.products.length){
 	    	this.props.fetchProducts();
 		}
+		const height = this.divElement.clientHeight;
+		this.setState({ headerHeight: height });
 	}	
 
 	render(){
 		if (!this.props.products.isLoading){
 			return(
 				<div>
-					<nav id="header" className="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+					<nav id="header" className="navbar fixed-top navbar-expand-lg navbar-light bg-light" ref={ (divElement) => this.divElement = divElement}>
 						<div className="container">
 							<div className="row">
 								<div className="promo col-12 text-center">
@@ -76,7 +81,7 @@ class Header extends Component {
 							</div>
 						</div>
 					</nav>
-					<div id="header-spacer"></div>
+					<div id="header-spacer" style={{marginBottom: this.state.headerHeight + 50 + 'px'}}></div>
 				</div>
 			)
 		} else {
