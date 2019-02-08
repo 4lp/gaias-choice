@@ -49,7 +49,7 @@ class Blog extends Component {
 									</div>
 								))}
 							</div>
-							<div className="col-3">
+							<div className="col-3 category-list">
 								<h4>Categories</h4>
 								<a href="#" onClick={()=>{this.handleCategoryClick(undefined)}}>All</a>
 								{this.props.blogcategories.map((category) => {
