@@ -13,19 +13,17 @@ function getCookie(name) {
 	return cookieValue;
 }
 
-export const fetchBlogposts = (category) => {
+export const fetchBlogposts = (options) => {
 	return (dispatch, getState) => {
 		let csrftoken = getCookie('csrftoken');
 		
 		let headers = {"Content-Type": "application/json", "X-CSRFToken": csrftoken};
 
+		let queryString = '?offset=' + options.page;
 
-		let queryString = '';
-
-		if (typeof category !== 'undefined') {
-			queryString = "?categories=" + category;
+		if (options.category) {
+			queryString += "&categories=" + options.category;
 		}
-		console.log(category)
 
 		return fetch("/api/blogpost/" + queryString, {headers, })
 			.then(res => {

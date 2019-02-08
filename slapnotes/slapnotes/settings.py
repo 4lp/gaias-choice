@@ -155,7 +155,8 @@ WEBPACK_LOADER = {
 # }
 
 REST_FRAMEWORK = {
-    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',)
+    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',),
+    'PAGE_SIZE': 5,
 }
 
 # LOGOUT_ON_PASSWORD_CHANGE = False
