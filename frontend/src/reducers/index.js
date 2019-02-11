@@ -5,9 +5,10 @@ import products from "./products";
 import email from "./email";
 import settings from "./settings";
 import carouselImages from "./carouselimages";
+import instagram from "./instagram"
 
 const gaiasApp = combineReducers({
-	blogposts, email, products, carouselImages, settings, blogcategories
+	blogposts, email, products, carouselImages, settings, blogcategories, instagram
 })
 
 const rootReducer = (state, action) => {

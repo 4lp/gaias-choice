@@ -53,7 +53,6 @@ class Header extends Component {
 											<a target="_blank" href="https://linkedin.com/company/gaiaschoice"><i className="fab fa-linkedin"></i></a>
 											<a target="_blank" href="https://www.youtube.com/channel/UCIA6YCQOD6aVraoRITio54A?view_as=subscriber"><i className="fab fa-youtube-square"></i></a>
 										</div>
-										<div className="clearfix"></div>
 										<Link to="/" className="nav-brand col-3" style={{color: "black"}}><h4>Gaia&apos;s Choice</h4></Link>
 										<div className="collapse navbar-collapse col-9">
 											<ul className="navbar-nav mr-auto mt-2 mt-lg-0 flex-row">
