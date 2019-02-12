@@ -46,12 +46,12 @@ class Header extends Component {
 								<div className="container">
 									<div className="row">
 										<div className="socials col-12">
-											<a target="_blank" href="https://twitter.com/ChooseGaias"><i className="fab fa-twitter-square"></i></a>
-											<a target="_blank" href="https://www.instagram.com/choosegaias/"><i className="fab fa-instagram"></i></a>
-											<a target="_blank" href="https://www.facebook.com/choosegaias/"><i className="fab fa-facebook-square"></i></a>
-											<a target="_blank" href="https://www.pinterest.com/gaiaschoice/"><i className="fab fa-pinterest-square"></i></a>
-											<a target="_blank" href="https://linkedin.com/company/gaiaschoice"><i className="fab fa-linkedin"></i></a>
-											<a target="_blank" href="https://www.youtube.com/channel/UCIA6YCQOD6aVraoRITio54A?view_as=subscriber"><i className="fab fa-youtube-square"></i></a>
+											<a target="_blank" rel="noopener noreferrer" href="https://twitter.com/ChooseGaias"><i className="fab fa-twitter-square"></i></a>
+											<a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/choosegaias/"><i className="fab fa-instagram"></i></a>
+											<a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/choosegaias/"><i className="fab fa-facebook-square"></i></a>
+											<a target="_blank" rel="noopener noreferrer" href="https://www.pinterest.com/gaiaschoice/"><i className="fab fa-pinterest-square"></i></a>
+											<a target="_blank" rel="noopener noreferrer" href="https://linkedin.com/company/gaiaschoice"><i className="fab fa-linkedin"></i></a>
+											<a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/channel/UCIA6YCQOD6aVraoRITio54A?view_as=subscriber"><i className="fab fa-youtube-square"></i></a>
 										</div>
 										<Link to="/" className="nav-brand col-3" style={{color: "black"}}><h4>Gaia&apos;s Choice</h4></Link>
 										<div className="collapse navbar-collapse col-9">

@@ -76,6 +76,11 @@ td {
 p{
     background-color: rgb(255,255,255,0.5);
     padding: 20px;
+	border-radius: 10px;
+}
+
+img {
+	border-radius: 10px;
 }
 
 .category-list{
@@ -116,21 +121,33 @@ p{
 	margin-left: 5px;
 }
 
-#header{
+#header, #footer, .made-by{
 	background-color: var(--accenttwo);
+}
+
+#footer {
+	padding: 20px 20px 0 20px;
 }
 
 .carousel{
 	padding-left: 100px;
 	padding-right: 100px;
-}
-
-.carousel-inner {
-	max-height: 500px;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	/* max-width: 500px; */
+	/* max-height: 500px; */
 }
 
 .home-container {
 	margin-top: -1.5%;
+}
+
+.product-image img{
+	max-width: 100%;
+}
+
+.product-image {
+	padding: 0 10px 50px 10px;
 }
 /*.dropdown:hover > .dropdown-menu {*/
 /*    display: block;*/

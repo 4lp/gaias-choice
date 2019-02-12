@@ -48,7 +48,7 @@ class RootContainerComponent extends Component {
 								<AsyncRoute path="/blog" component={Blog} />
 								<Route exact path="/products" render={(props) => ( <Products products={this.props.products}/> )} />
 								<Route path="/products/:productname" render={(props) => ( <ProductDetail products={this.props.products} {...props}/> )} />
-								<AsyncRoute path="/" component={Home} />
+								<Route path="/" render={(props) => ( <Home products={this.props.products}/> )} />
 								<Route component={NotFound} />
 							</Switch>
 						</div>
