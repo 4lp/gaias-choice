@@ -7,15 +7,32 @@ import {products} from "../actions";
 
 class Header extends Component {
 	state = {
-		headerHeight: 0 
+		headerHeight: 0,
+		discountDismissed: false,
 	}
 	componentDidMount() {
 		if (!this.props.products.length){
 	    	this.props.fetchProducts();
 		}
-		const height = this.divElement.clientHeight;
+		let height = this.divElement.clientHeight;
 		this.setState({ headerHeight: height });
+		window.addEventListener("resize", this.setState({ headerHeight: height }));
 	}	
+
+	componentWillUnmount(){
+		let height = this.divElement.clientHeight;
+		window.removeEventListener("resize", this.setState({ headerHeight: height }));
+	}
+
+	dismissAlert() {
+		this.setState({discountDismissed: true},()=>{
+			const height = this.divElement.clientHeight;
+			this.setState({ headerHeight: height });
+		})
+		
+	}
+
+
 
 	render(){
 		let discount_mode = false;
@@ -34,9 +51,10 @@ class Header extends Component {
 					<nav id="header" className="navbar fixed-top navbar-expand-lg" ref={ (divElement) => this.divElement = divElement}>
 						<div className="container-fluid">
 							<div className="row" style={{width:'100%'}}>
-								{discount_mode &&
+								{discount_mode && !this.state.discountDismissed &&
 									<div className="promo col-12 text-center">
-										<div className="alert alert-success">
+										<div className="alert alert-success alert-dismissable" role="alert">
+											<button type="button" className="close" data-dismiss="alert" aria-label="Close" onClick={() => this.dismissAlert()}><span aria-hidden="true">&times;</span></button>
 											{Object.keys(discounts).map((key, index) => (
 												<span key={key}>{key} is discounted by {discounts[key]}!<br/></span>
 											))}
@@ -58,13 +76,13 @@ class Header extends Component {
 											<ul className="navbar-nav mr-auto mt-2 mt-lg-0 flex-row">
 												<li className="nav-item active"><Link to="/" className="nav-link">Home</Link></li>
 												<li className="nav-item dropdown">
-													<a className="nav-link dropdown-toggle" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false" href="/products">
+													<Link className="nav-link dropdown-toggle" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false" to="/products">
 														Products
-													</a>
+													</Link>
 													<div className="dropdown-menu" aria-labelledby="navbarDropdown">
 														{this.props.products.products.map((product) => (
 															<div key={product.id}>
-																<a className="dropdown-item" href={"/products/"+product.path}>{product.name}</a>
+																<Link className="dropdown-item" to={"/products/"+product.path}>{product.name}</Link>
 															</div>
 														))}
 													</div>
@@ -74,9 +92,9 @@ class Header extends Component {
 														About Us	
 													</a>
 													<div className="dropdown-menu" aria-labelledby="navbarDropdown">
-													  <a className="dropdown-item" href="#">Mission Statement</a>
-													  <a className="dropdown-item" href="#">Experience</a>
-													  <a className="dropdown-item" href="#">Why we&apos;re doing this</a>
+													  <Link className="dropdown-item" to="/mission-statement">Mission Statement</Link>
+													  <Link className="dropdown-item" to="/experience">Experience</Link>
+													  <Link className="dropdown-item" to="/why-were-doing-this">Why we&apos;re doing this</Link>
 													</div>
 												</li>
 												<li className="nav-item dropdown">

@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import Header from "./Header";
-import Footer from "./Footer";
 import {connect} from 'react-redux';
 import {carouselImages} from "../actions";
 import {settings} from "../actions";
@@ -45,7 +43,6 @@ class Home extends Component {
 		if (!this.props.instagram.isLoading){
 			return(
 				<div>
-					<Header />
 					<div className="container-fluid home-container">
 					<div className="row">
 							<div className="main-photo col-12">
@@ -99,7 +96,6 @@ class Home extends Component {
 							</div>
 						</div>
 					</div>
-					<Footer products={this.props.products}/>
 				</div>
 			)
 		} else {

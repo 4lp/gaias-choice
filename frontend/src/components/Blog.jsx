@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-import Header from "./Header";
 import {blogposts} from "../actions";
 import {blogcategories} from "../actions";
 
@@ -32,9 +31,9 @@ class Blog extends Component {
 		if (!this.props.blogposts.isLoading){
 			let pages = Math.floor(this.props.blogposts.blogposts.count / 5) + 1;
 			console.log(pages)
+			console.log(this.state.page)
 			return(
 				<div>
-					<Header />
 					<div className="container">
 						<div className="row">
 							<div className="col-12 text-center">
@@ -44,8 +43,12 @@ class Blog extends Component {
 								{this.props.blogposts.blogposts.results.map((blogpost) => (
 									<div key={blogpost.id}>
 										<h4>{blogpost.title}</h4>
-										<p>{blogpost.text}</p>
-										<p>Posted by {blogpost.owner} at {blogpost.created_at}</p>
+										<p>
+											{blogpost.text}
+											<br/>
+											<br/>
+											<small>Posted by {blogpost.owner} at {blogpost.created_at}</small>
+										</p>
 									</div>
 								))}
 							</div>
@@ -61,14 +64,20 @@ class Blog extends Component {
 								})}
 							</div>
 							<div className="col-12">
+								{this.state.page !== 0 &&
+									<a href="#" className="pagination" onClick={()=>{this.handlePageClick(this.state.page-1)}}>«</a>
+								}
 								{/* basically range(count) */}
 								{[...Array(pages).keys()].map((page) => {
 									if (this.state.page !== page){
-										return (<a href="#" onClick={()=>{this.handlePageClick(page)}}>{page + 1}</a>)
+										return (<a href="#" className="pagination" onClick={()=>{this.handlePageClick(page)}}>{page + 1}</a>)
 									} else {
-										return (<span>{page + 1}</span>)
+										return (<span className="pagination">{page + 1}</span>)
 									}
 								})}
+								{this.state.page !== pages - 1 &&
+									<a href="#" className="pagination" onClick={()=>{this.handlePageClick(this.state.page+1)}}>»</a>
+								}
 							</div>
 						</div>
 					</div>

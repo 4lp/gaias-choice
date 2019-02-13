@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Contact from './Contact' 
-import Header from './Header' 
 import {connect} from 'react-redux';
 
 class ContactPage extends Component {
@@ -8,7 +7,6 @@ class ContactPage extends Component {
 	render(){
 		return(
 			<div>
-				<Header />
 				<div className="container">
 					<div className="row">
 						<div className="col-12 text-center">

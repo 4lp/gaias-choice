@@ -1,4 +1,3 @@
-import Header from "./Header";
 import ProductDetail from "./ProductDetail";
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
@@ -10,12 +9,25 @@ export default class Products extends Component {
 		if (!this.props.products.isLoading){
 			return(
 				<div>
-					<Header />
-						{this.props.products.products.map((product) => (
-							<div key={product.id}>
-								<Link to={"/products/"+product.path}>{product.name}</Link>
+					<div className="container">
+						<div className="row">
+							<div className="col-12">
+								<h1 className="text-center">Products</h1>
+								<br/>
 							</div>
-						))}
+							{this.props.products.products.map((product) => {
+								let images = product.images.split(',');
+								return (
+									<div className="col-4 product-image text-center">
+										<div key={product.id}>
+											<h4><Link to={"/products/"+product.path}>{product.name}</Link></h4>
+											<Link to={"/products/"+product.path}><img src={images[0]} /></Link>
+										</div>
+									</div>
+								)
+							})}
+						</div>
+					</div>
 				</div>
 			)
 		} else {

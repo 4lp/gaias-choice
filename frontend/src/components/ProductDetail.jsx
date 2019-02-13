@@ -1,4 +1,3 @@
-import Header from "./Header";
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
@@ -7,7 +6,7 @@ export default class ProductDetail extends Component {
 
 	render(){
 		const products = this.props.products.products;
-        const path = this.props.match.params.productname;
+		const path = this.props.props.match.params.productname;
 		let images;
 		let reviews;
         const product = products.filter(product => {
@@ -20,7 +19,6 @@ export default class ProductDetail extends Component {
 		if (!this.props.products.isLoading) {
 			return(
 				<div>
-					<Header />
 					<div className="container">
 						<div className="row">
 							<div className="col-12 text-center">

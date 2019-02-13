@@ -77,16 +77,24 @@ p{
     background-color: rgb(255,255,255,0.5);
     padding: 20px;
 	border-radius: 10px;
+	border: 1px lightgrey solid;
 }
 
 img {
 	border-radius: 10px;
+	border: 1px lightgrey solid;
 }
 
 .category-list{
     background-color: rgb(255,255,255,0.5);
+	border: 1px lightgrey solid;
+	border-radius: 10px;
 }
 
+.category-list h4{
+	padding: 10px;
+	text-align: center;
+}
 .promo {
 	font-size: .75em;
 }
@@ -100,6 +108,11 @@ img {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
+	margin-top: -30px;
+}
+
+.close {
+	margin: 5px;
 }
 
 .main-photo-text {
@@ -148,6 +161,15 @@ img {
 
 .product-image {
 	padding: 0 10px 50px 10px;
+}
+
+#footer {
+	margin-top: 50px;
+}
+
+.pagination {
+	margin: 5px;
+	display: inline;
 }
 /*.dropdown:hover > .dropdown-menu {*/
 /*    display: block;*/

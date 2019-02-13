@@ -24,6 +24,15 @@ export default class Footer extends Component {
 						</div>
 						<div className="col-3 text-center">
 							<h6>Contact Us</h6>
+							<div>
+								<i className="fas fa-home"></i>
+							</div>	
+							<div>
+								<i className="fas fa-mobile-alt"></i>
+							</div>	
+							<div>								
+								<i className="far fa-envelope"></i>
+							</div>
 						</div>
 						<div className="col-12 text-center">
 							<h6>Check us out elsewhere on the web!</h6>
