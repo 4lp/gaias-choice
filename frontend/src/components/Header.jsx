@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import Collapsible from 'react-collapsible';
 import {connect} from 'react-redux';
 import {products} from "../actions";
-
+import {settings} from "../actions";
 
 class Header extends Component {
 	state = {
@@ -11,8 +11,8 @@ class Header extends Component {
 		discountDismissed: false,
 	}
 	componentDidMount() {
-		if (!this.props.products.length){
-	    	this.props.fetchProducts();
+		if (!this.props.settings.length){
+	    	this.props.fetchSettings();
 		}
 		let height = this.divElement.clientHeight;
 		this.setState({ headerHeight: height });
@@ -35,6 +35,11 @@ class Header extends Component {
 
 
 	render(){
+		let is_prelaunch;
+		if(!this.props.settings.isLoading){
+			let prelaunch_setting = this.props.settings.settings.find(setting => setting.name === 'prelaunch_mode')
+			is_prelaunch = prelaunch_setting.value
+		}
 		let discount_mode = false;
 		let discounts = {};
 		if (!this.props.products.isLoading){
@@ -51,6 +56,9 @@ class Header extends Component {
 					<nav id="header" className="navbar fixed-top navbar-expand-lg" ref={ (divElement) => this.divElement = divElement}>
 						<div className="container-fluid">
 							<div className="row" style={{width:'100%'}}>
+								{is_prelaunch &&
+									<div class="corner-ribbon top-left sticky red shadow"><span>Opening Soon!</span></div>
+								}
 								{discount_mode && !this.state.discountDismissed &&
 									<div className="promo col-12 text-center">
 										<div className="alert alert-success alert-dismissable" role="alert">
@@ -102,14 +110,17 @@ class Header extends Component {
 														Learn More	
 													</a>
 													<div className="dropdown-menu" aria-labelledby="navbarDropdown">
-													  <a className="dropdown-item" href="#">What is CBD?</a>
-													  <a className="dropdown-item" href="#">Benefits of CBD</a>
-													  <a className="dropdown-item" href="#">Who Can Use CBD?</a>
-													  <a className="dropdown-item" href="#">FAQ</a>
+													  <Link className="dropdown-item" to="what-is-cbd">What is CBD?</Link>
+													  <Link className="dropdown-item" to="benefits">Benefits of CBD</Link>
+													  <Link className="dropdown-item" to="who-can-use">Who Can Use CBD?</Link>
+													  <Link className="dropdown-item" to="faq">FAQ</Link>
 													</div>
 												</li>
 												<li className="nav-item active"><Link to="/blog" className="nav-link">Blog</Link></li>
-												<li className="nav-item active"><a href="https://shop.medicalmarijuanainc.com/" className="nav-link" target="_blank">Shop</a></li>
+												{ is_prelaunch ?
+													<li className="nav-item active"><Link to="/products" className="nav-link">Shop</Link></li> : 
+													<li className="nav-item active"><a href="https://shop.medicalmarijuanainc.com/" className="nav-link" target="_blank">Shop</a></li>
+												}
 												<li className="nav-item active"><Link to="/contact" className="nav-link">Contact Us</Link></li>
 											</ul>
 										</div>
@@ -134,8 +145,14 @@ const mapStateToProps = state => {
 			return {field, message: state.products.errors[field]};
 		});
 	}
+	if (state.settings.errors) {
+		errors = [...errors, Object.keys(state.settings.errors).map(field => {
+			return {field, message: state.settings.errors[field]};
+		})];
+	}
 	return {
 		products: state.products,
+		settings: state.settings,
 		errors
 	}
 }
@@ -144,6 +161,9 @@ const mapDispatchToProps = dispatch => {
 	return {
 		fetchProducts: () => {
 			dispatch(products.fetchProducts());
+	    },
+			fetchSettings: () => {
+			dispatch(settings.fetchSettings());
 	    },
 	}
 }

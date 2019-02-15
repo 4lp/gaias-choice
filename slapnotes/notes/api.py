@@ -40,7 +40,9 @@ class ContactEmailAPI(generics.GenericAPIView):
         name = serializer.validated_data['name']
         email = serializer.validated_data['reply']
         message = serializer.validated_data['message']
-        email_text = "You received a message from {name} at {email}: {message}".format(
-                name=name, email=email, message=message)
+        phone = serializer.validated_data['phone']
+        zip_code = serializer.validated_data['zip_code']
+        email_text = "You received a message from {name} at {email}, with the phone number {phone} and the zip code {zip_code}: {message}".format(
+                name=name, email=email, message=message, phone=phone, zip_code=zip_code)
         send_mail("Contact email from Slapnote", email_text, getattr(settings, 'DEFAULT_FROM_EMAIL'), [getattr(settings, 'DEFAULT_FROM_EMAIL')])
         return Response(serializer.data)

@@ -22,10 +22,14 @@ export default class ProductDetail extends Component {
 					<div className="container">
 						<div className="row">
 							<div className="col-12 text-center">
-								<h1>{product[0].name}</h1>
 							</div>
 							<div className="col-6">
+								<h1 className="text-center">{product[0].name}</h1>
 								<p>{product[0].description}</p>
+								<div className="text-center">
+									<button className="btn btn-primary"><strong>Buy now!</strong></button>
+								</div>
+								<br/>
 								<h3 className="text-center">Reviews</h3>
 								<p>
 								{reviews.map((review) => (

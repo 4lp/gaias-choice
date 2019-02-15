@@ -33,6 +33,8 @@ class ContactEmailSerializer(serializers.Serializer):
     name = serializers.CharField(required=True)
     reply = serializers.EmailField(required=True)
     message = serializers.CharField(required=True)
+    phone = serializers.CharField(required=True)
+    zip_code = serializers.CharField(required=True)
     user = serializers.CharField(required=False, allow_blank=True)
     captcha = serializers.CharField(required=False, allow_blank=True)
 

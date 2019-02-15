@@ -29,17 +29,6 @@ class Home extends Component {
 			let prelaunch_setting = this.props.settings.settings.find(setting => setting.name === 'prelaunch_mode')
 			is_prelaunch = prelaunch_setting.value
 		}
-
-		if(!is_prelaunch){
-			prelaunch_code = (
-				<div>Wow, our store has launched!</div>
-			)
-		} else {
-			prelaunch_code = (
-				<div>Aw dang, our store hasn't launched : ( </div>
-			)
-		}
-
 		if (!this.props.instagram.isLoading){
 			return(
 				<div>
@@ -61,15 +50,17 @@ class Home extends Component {
 							</div>
 							<div className="container-fluid">
 								<div className="row justify-content-center">
-									<div className="col-9">
+									<div className="col-12 col-md-6">
 										<div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
 											<ol className="carousel-indicators">
-												{this.props.instagram.instagramPictures.data.map((image, index) => (
+												{Object.entries(this.props.instagram.errors).length === 0 && this.props.instagram.errors.constructor === Object &&
+													this.props.instagram.instagramPictures.data.map((image, index) => (
 													<li data-target="#carouselExampleIndicators" data-slide-to={index} className={index === 0 ? "active" : null} key={image.id}></li>
 												))}
 											</ol>
 											<div className="carousel-inner">
-												{this.props.instagram.instagramPictures.data.map((image, index) => (
+												{Object.entries(this.props.instagram.errors).length === 0 && this.props.instagram.errors.constructor === Object &&
+												this.props.instagram.instagramPictures.data.map((image, index) => (
 													<div className={index === 0 ? "carousel-item active" : "carousel-item"} key={image.id}>
 														<img className="d-block w-100" src={image.images.standard_resolution.url} alt={image.caption.text}/>
 													</div>

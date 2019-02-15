@@ -15,6 +15,10 @@ import Blog from "./components/Blog";
 import Products from "./components/Products";
 import MissionStatement from "./components/MissionStatement";
 import Experience from "./components/Experience";
+import Faq from "./components/Faq";
+import WhoCanUse from "./components/WhoCanUse";
+import Benefits from "./components/Benefits";
+import WhatIsCBD from "./components/WhatIsCBD";
 import WhyWereDoingThis from "./components/WhyWereDoingThis";
 import ProductDetail from "./components/ProductDetail";
 import Template from "./components/Template";
@@ -44,6 +48,10 @@ class RootContainerComponent extends Component {
 								<Route path="/products/:productname" render={(props) => ( <Template component={<ProductDetail products={this.props.products} />} products={this.props.products} {...props}/> )} />
 								<Route exact path="/mission-statement" render={(props) => (<Template component={<MissionStatement/>} products={this.props.products}/> )} />
 								<Route exact path="/experience" render={(props) => ( <Template component={<Experience/>} products={this.props.products}/> )} />
+								<Route exact path="/what-is-cbd" render={(props) => ( <Template component={<WhatIsCBD/>} products={this.props.products}/> )} />
+								<Route exact path="/benefits" render={(props) => ( <Template component={<Benefits/>} products={this.props.products}/> )} />
+								<Route exact path="/who-can-use" render={(props) => ( <Template component={<WhoCanUse/>} products={this.props.products}/> )} />
+								<Route exact path="/faq" render={(props) => ( <Template component={<Faq/>} products={this.props.products}/> )} />
 								<Route exact path="/why-were-doing-this" render={(props) => (<Template component={<WhyWereDoingThis/>} products={this.props.products}/> )} />
 								<Route path="/" render={(props) => ( <Template component={<Home/>} products={this.props.products}/> )} />
 								<Route component={NotFound} />
