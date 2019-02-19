@@ -53,14 +53,14 @@ class Header extends Component {
 			}
 			return(
 				<div>
-					<nav id="header" className="navbar fixed-top navbar-expand-lg" ref={ (divElement) => this.divElement = divElement}>
-						<div className="container-fluid">
-							<div className="row" style={{width:'100%'}}>
+					<nav id="header" className="navbar fixed-top navbar-expand-lg m0 p0" ref={ (divElement) => this.divElement = divElement}>
+						<div className="container-fluid m0 p0">
+							<div className="row m0 p0" style={{width:'100%'}}>
 								{is_prelaunch &&
 									<div class="corner-ribbon top-left sticky red shadow"><span>Opening Soon!</span></div>
 								}
 								{discount_mode && !this.state.discountDismissed &&
-									<div className="promo col-12 text-center">
+									<div className="promo col-12 text-center m0 p0">
 										<div className="alert alert-success alert-dismissable" role="alert">
 											<button type="button" className="close" data-dismiss="alert" aria-label="Close" onClick={() => this.dismissAlert()}><span aria-hidden="true">&times;</span></button>
 											{Object.keys(discounts).map((key, index) => (

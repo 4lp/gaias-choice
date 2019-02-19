@@ -38,33 +38,48 @@ class Home extends Component {
 								<div className="main-photo-text">
 									<h1><span><strong>Gaia&apos;s Choice</strong></span></h1>
 									<br />
+									<Link to="/products"><button className="btn btn-primary">Shop Now&nbsp;&nbsp;▸</button></Link>
+									&nbsp;
+									<Link to="/whatiscbd"><button className="btn btn-secondary">About CBD&nbsp;&nbsp;▸</button></Link>
+									<br />
+									<div className="row justify-content-center">
+									<div style={{width: "50%"}} className="justify-content-center">
+										<hr />
+									</div>
+									</div>
 									<h4><span>To provide wholesome, trustworthy products that will promote the well being of our community.</span></h4>
 								</div>
 							</div>
 							{prelaunch_code}
-							<div className="narrow-section">
-								<p>
-								About Us: With a combined 17 years in product manufacturing, a former research and develop chemist at a top medical cannabis company, and the drive and passion to provide natural and safe products, Gaia's Choice founders aim to better the community.
-								</p>
-								<hr />
+							<div className="narrow-section container-fluid d-flex">
+								<div className="row align-items-center">
+									<div className="col align-self-center">
+								With a combined 17 years in product manufacturing, a former research and develop chemist at a top medical cannabis company, and the drive and passion to provide natural and safe products, Gaia's Choice founders aim to better the community.
+									</div>
+								</div>
 							</div>
-							<div className="container-fluid">
+							<div className="container-fluid color-div-1">
 								<div className="row justify-content-center">
 									<div className="col-12 col-md-6">
 										<div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
 											<ol className="carousel-indicators">
 												{Object.entries(this.props.instagram.errors).length === 0 && this.props.instagram.errors.constructor === Object &&
-													this.props.instagram.instagramPictures.data.map((image, index) => (
-													<li data-target="#carouselExampleIndicators" data-slide-to={index} className={index === 0 ? "active" : null} key={image.id}></li>
-												))}
+													this.props.instagram.instagramPictures.data.map((image, index) => { 
+														if(index <=7){
+															return <li data-target="#carouselExampleIndicators" data-slide-to={index} className={index === 0 ? "active" : null} key={image.id}></li>
+														}
+													}
+												)}
 											</ol>
 											<div className="carousel-inner">
 												{Object.entries(this.props.instagram.errors).length === 0 && this.props.instagram.errors.constructor === Object &&
-												this.props.instagram.instagramPictures.data.map((image, index) => (
-													<div className={index === 0 ? "carousel-item active" : "carousel-item"} key={image.id}>
+												this.props.instagram.instagramPictures.data.map((image, index) => {
+													if (index <= 7){
+													return(<div className={index === 0 ? "carousel-item active" : "carousel-item"} key={image.id}>
 														<img className="d-block w-100" src={image.images.standard_resolution.url} alt={image.caption.text}/>
-													</div>
-												))}
+													</div>)
+													}
+												})}
 											</div>
 											<a className="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
 												<span className="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -79,11 +94,12 @@ class Home extends Component {
 								</div>
 							</div>
 							<hr />
-							<div className="narrow-section">
-								<p>
-								About Us: With a combined 17 years in product manufacturing, a former research and develop chemist at a top medical cannabis company, and the drive and passion to provide natural and safe products, Gaia's Choice founders aim to better the community.
-								</p>
-								<hr />
+							<div className="narrow-section background-div d-flex">
+								<div className="row align-items-center">
+									<div className="col align-self-center">
+								With a combined 17 years in product manufacturing, a former research and develop chemist at a top medical cannabis company, and the drive and passion to provide natural and safe products, Gaia's Choice founders aim to better the community.
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>

@@ -30,10 +30,27 @@ body {
 	padding: 0;
     font-family: 'Josefin Sans', sans-serif;
 	min-width: 100%;
-	background-image: url('https://www.rpnation.com/gallery/parchment-paper-div-test.33588/full');
-	background-repeat: repeat;
 	color: #010;
 	font-size: 1.1em;
+	background: linear-gradient(-45deg, var(--accent),var(--accenttwo));
+}
+
+.background-div{
+	background-image: url('https://www.rpnation.com/gallery/parchment-paper-div-test.33588/full');
+	background-repeat: repeat;
+}
+
+.color-div-1{
+	background-color: var(--secondary);
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0; 
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -82,13 +99,25 @@ p{
 
 img {
 	border-radius: 10px;
-	border: 1px lightgrey solid;
+	/* border: 1px lightgrey solid; */
+}
+
+/* helper classes */
+
+.m0{
+	margin: 0;
+}
+
+.p0{
+	padding: 0;
 }
 
 .category-list{
     background-color: rgb(255,255,255,0.5);
 	border: 1px lightgrey solid;
 	border-radius: 10px;
+    padding: 0 20px 20px 20px;
+    margin-top: 3%;
 }
 
 .category-list h4{
@@ -101,6 +130,9 @@ img {
 
 .promo .alert {
 	padding: 0;
+	background-color: var(--tertiary);
+	border-color: var(--tertiary);
+	border-radius: 0;
 }
 .main-photo {
 	background-image: url("https://img1.wsimg.com/isteam/ip/450350c3-44ea-4c81-be69-6dae3eaed7d9/bf7496f8-01c1-44d4-b534-d19796038d65.jpg/:/rs=w:1600,h:600,cg:true,m/cr=w:1600,h:600,a:cc");
@@ -128,6 +160,7 @@ img {
 }
 .narrow-section {
 	padding: 0 10% 0 10%;
+	min-height: 200px;
 }
 
 .svg-inline--fa{
@@ -136,6 +169,10 @@ img {
 
 #header, #footer, .made-by{
 	background-color: var(--accenttwo);
+}
+
+#header {
+	min-height: 85px;
 }
 
 #footer {

@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'dynamic_preferences',
     'django_filters',
+    'tinymce',
     # comment the following line if you don't want to use user preferences
     # 'dynamic_preferences.users.apps.UserPreferencesConfig',
 ]
@@ -141,6 +142,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#TINYMCE_JS_URL = "https://cdnjs.cloudflare.com/ajax/libs/tinymce/5.0.0/tinymce.min.js"
+TINYMCE_DEFAULT_CONFIG = {
+    'plugins': "table,spellchecker,paste,searchreplace",
+    'theme': "advanced",
+    'cleanup_on_startup': True,
+    'custom_undo_redo_levels': 10,
+}
+TINYMCE_SPELLCHECKER = True
+#TINYMCE_COMPRESSOR = True
 
 WEBPACK_LOADER = {
     'DEFAULT': {

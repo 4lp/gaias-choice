@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from tinymce.models import HTMLField
 
 class BlogCategory(models.Model):
     name = models.CharField(max_length=255, default='')
@@ -9,7 +10,7 @@ class BlogCategory(models.Model):
 
 class Blogpost(models.Model):
     title = models.CharField(max_length=255, default='')
-    text = models.TextField()
+    text = HTMLField()
     created_at = models.DateTimeField(auto_now_add=True)
     owner = models.ForeignKey(User, models.SET_NULL, blank=True, null=True)
     categories = models.ManyToManyField(BlogCategory)
@@ -20,7 +21,7 @@ class Blogpost(models.Model):
 class Product(models.Model):
     name = models.CharField(max_length=255, default='')
     path = models.CharField(max_length=255, default='')
-    description = models.TextField()
+    description = HTMLField()
     images = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     owner = models.ForeignKey(User, models.SET_NULL, blank=True, null=True)
