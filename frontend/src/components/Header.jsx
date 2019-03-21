@@ -57,13 +57,20 @@ class Header extends Component {
 						<div className="container-fluid m0 p0">
 							<div className="row m0 p0" style={{width:'100%'}}>
 								{is_prelaunch &&
+<<<<<<< HEAD
 									<div class="corner-ribbon top-left sticky red shadow"><span class="ribbon-text">Shop Coming Soon!</span></div>
+=======
+									<div class="corner-ribbon top-left sticky red shadow"><span>Opening Soon!</span></div>
+>>>>>>> a39c112cc44e997e985a96c71324731b17fe8783
 								}
 								{discount_mode && !this.state.discountDismissed &&
 									<div className="promo col-12 text-center m0 p0">
 										<div className="alert alert-success alert-dismissable" role="alert">
 											<button type="button" className="close" data-dismiss="alert" aria-label="Close" onClick={() => this.dismissAlert()}><span aria-hidden="true">&times;</span></button>
+<<<<<<< HEAD
 											<h4>DISCOUNTS</h4>
+=======
+>>>>>>> a39c112cc44e997e985a96c71324731b17fe8783
 											{Object.keys(discounts).map((key, index) => (
 												<span key={key}>{key} is discounted by {discounts[key]}!<br/></span>
 											))}

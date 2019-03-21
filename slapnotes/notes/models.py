@@ -14,7 +14,10 @@ class Blogpost(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     owner = models.ForeignKey(User, models.SET_NULL, blank=True, null=True)
     categories = models.ManyToManyField(BlogCategory)
+<<<<<<< HEAD
     permalink = models.CharField(max_length=255, default='')
+=======
+>>>>>>> a39c112cc44e997e985a96c71324731b17fe8783
     
     def __str__(self):
         return self.title

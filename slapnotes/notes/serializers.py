@@ -16,7 +16,11 @@ class BlogpostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Blogpost
         fields = ('id', 'text', 'title', 'created_at', 'owner', 
+<<<<<<< HEAD
                 'categories', 'permalink')
+=======
+                'categories')
+>>>>>>> a39c112cc44e997e985a96c71324731b17fe8783
         
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:

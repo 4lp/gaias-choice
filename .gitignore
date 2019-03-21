@@ -119,6 +119,9 @@ webpack-stats.prod.json
 # build files
 build/
 bundles/
+<<<<<<< HEAD
 
 #Secrets
 secrets.json
+=======
+>>>>>>> a39c112cc44e997e985a96c71324731b17fe8783
