@@ -7,11 +7,7 @@ import {blogcategories} from "../actions";
 class Blog extends Component {
 	state = {
 		category: null,
-<<<<<<< HEAD
 		page: 1,
-=======
-		page: 0,
->>>>>>> a39c112cc44e997e985a96c71324731b17fe8783
 	}
 
 	componentDidMount() {
@@ -24,11 +20,7 @@ class Blog extends Component {
 	}	
 
 	handleCategoryClick(category) {
-<<<<<<< HEAD
 		this.setState({category: category, page: 1}, async () => {this.props.fetchBlogposts(this.state)});
-=======
-		this.setState({category: category, page: 0}, async () => {this.props.fetchBlogposts(this.state)});
->>>>>>> a39c112cc44e997e985a96c71324731b17fe8783
 	}
 
 	handlePageClick(page) {
@@ -38,11 +30,6 @@ class Blog extends Component {
 	render(){
 		if (!this.props.blogposts.isLoading){
 			let pages = Math.floor(this.props.blogposts.blogposts.count / 5) + 1;
-<<<<<<< HEAD
-=======
-			console.log(pages)
-			console.log(this.state.page)
->>>>>>> a39c112cc44e997e985a96c71324731b17fe8783
 			return(
 				<div>
 					<div className="container">
@@ -55,19 +42,12 @@ class Blog extends Component {
 									<div key={blogpost.id}>
 										<h4>{blogpost.title}</h4>
 										<p>
-<<<<<<< HEAD
 											<div dangerouslySetInnerHTML={{__html:blogpost.text}}>
 											</div>
 											<br/>
 											<br/>
 											<small>Posted by {blogpost.owner} at {blogpost.created_at}</small>
 											<Link to={"/blog/"+blogpost.permalink}><small style={{float:"right"}}>Permalink</small></Link>
-=======
-											{blogpost.text}
-											<br/>
-											<br/>
-											<small>Posted by {blogpost.owner} at {blogpost.created_at}</small>
->>>>>>> a39c112cc44e997e985a96c71324731b17fe8783
 										</p>
 									</div>
 								))}
@@ -84,30 +64,18 @@ class Blog extends Component {
 								})}
 							</div>
 							<div className="col-12">
-<<<<<<< HEAD
 								{this.state.page !== 1 &&
-=======
-								{this.state.page !== 0 &&
->>>>>>> a39c112cc44e997e985a96c71324731b17fe8783
 									<a href="#" className="pagination" onClick={()=>{this.handlePageClick(this.state.page-1)}}>«</a>
 								}
 								{/* basically range(count) */}
 								{[...Array(pages).keys()].map((page) => {
-<<<<<<< HEAD
 									if (this.state.page !== page + 1){
-=======
-									if (this.state.page !== page){
->>>>>>> a39c112cc44e997e985a96c71324731b17fe8783
 										return (<a href="#" className="pagination" onClick={()=>{this.handlePageClick(page)}}>{page + 1}</a>)
 									} else {
 										return (<span className="pagination">{page + 1}</span>)
 									}
 								})}
-<<<<<<< HEAD
 								{this.state.page !== pages &&
-=======
-								{this.state.page !== pages - 1 &&
->>>>>>> a39c112cc44e997e985a96c71324731b17fe8783
 									<a href="#" className="pagination" onClick={()=>{this.handlePageClick(this.state.page+1)}}>»</a>
 								}
 							</div>

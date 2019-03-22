@@ -18,8 +18,6 @@ export const fetchBlogposts = (options) => {
 		let csrftoken = getCookie('csrftoken');
 		
 		let headers = {"Content-Type": "application/json", "X-CSRFToken": csrftoken};
-<<<<<<< HEAD
-		console.log(options)
 
 		let queryParams = []
 
@@ -41,15 +39,6 @@ export const fetchBlogposts = (options) => {
 			queryString += param + "&";
 		});
 
-=======
-
-		let queryString = '?offset=' + options.page;
-
-		if (options.category) {
-			queryString += "&categories=" + options.category;
-		}
-
->>>>>>> a39c112cc44e997e985a96c71324731b17fe8783
 		return fetch("/api/blogpost/" + queryString, {headers, })
 			.then(res => {
 				if (res.status < 500) {

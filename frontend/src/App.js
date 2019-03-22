@@ -12,10 +12,7 @@ import 'react-router-modal/css/react-router-modal.css';
 import { ModalContainer, ModalRoute } from 'react-router-modal';
 import { LastLocationProvider, withLastLocation } from 'react-router-last-location';
 import Blog from "./components/Blog";
-<<<<<<< HEAD
 import BlogPermalink from "./components/BlogPermalink";
-=======
->>>>>>> a39c112cc44e997e985a96c71324731b17fe8783
 import Products from "./components/Products";
 import MissionStatement from "./components/MissionStatement";
 import Experience from "./components/Experience";
@@ -47,10 +44,7 @@ class RootContainerComponent extends Component {
 						<div>
 							<Switch>
 								<Route exact path="/contact" render={(props) => ( <Template component={<ContactPage/>} products={this.props.products}/> )} />
-<<<<<<< HEAD
 								<Route exact path="/blog/:permalink" render={(props) => ( <Template component={<BlogPermalink/>} products={this.props.products} {...props}/> )} />
-=======
->>>>>>> a39c112cc44e997e985a96c71324731b17fe8783
 								<Route exact path="/blog" render={(props) => ( <Template component={<Blog/>} products={this.props.products}/> )} />
 								<Route exact path="/products" render={(props) => ( <Template component={<Products products={this.props.products}/>} products={this.props.products}/> )} />
 								<Route path="/products/:productname" render={(props) => ( <Template component={<ProductDetail products={this.props.products} />} products={this.props.products} {...props}/> )} />

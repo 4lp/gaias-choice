@@ -4,11 +4,7 @@ from .models import Product
 from .models import CarouselImage
 from rest_framework import viewsets, permissions, generics
 from rest_framework.response import Response
-<<<<<<< HEAD
 from rest_framework.pagination import PageNumberPagination
-=======
-from rest_framework.pagination import LimitOffsetPagination
->>>>>>> a39c112cc44e997e985a96c71324731b17fe8783
 from django import forms
 from django.core.mail import send_mail, BadHeaderError
 from django.conf import settings
@@ -24,13 +20,8 @@ class BlogpostViewSet(viewsets.ModelViewSet):
     serializer_class = BlogpostSerializer
     queryset = Blogpost.objects.all().order_by('-created_at')
     filter_backends = (rest_framework.DjangoFilterBackend,)
-<<<<<<< HEAD
     filter_fields = ('categories','permalink')
     pagination_class = PageNumberPagination
-=======
-    filter_fields = ('categories',)
-    pagination_class = LimitOffsetPagination
->>>>>>> a39c112cc44e997e985a96c71324731b17fe8783
 
 class ProductViewSet(viewsets.ModelViewSet):
     serializer_class = ProductSerializer
