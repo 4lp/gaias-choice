@@ -6,7 +6,7 @@ import {blogcategories} from "../actions";
 
 class Blog extends Component {
 	state = {
-		category: null,
+		category: [],
 		page: 1,
 	}
 
@@ -20,7 +20,14 @@ class Blog extends Component {
 	}	
 
 	handleCategoryClick(category) {
-		this.setState({category: category, page: 1}, async () => {this.props.fetchBlogposts(this.state)});
+		if (this.state.category.includes(category)){
+			let index = this.state.category.indexOf(category);
+			let newCategories = [...this.state.category]
+			newCategories.splice(index, 1)
+			this.setState({category: newCategories, page: 1}, async () => {this.props.fetchBlogposts(this.state)});
+		} else {
+			this.setState({category: [...this.state.category,category], page: 1}, async () => {this.props.fetchBlogposts(this.state)});
+		}
 	}
 
 	handlePageClick(page) {
@@ -54,13 +61,9 @@ class Blog extends Component {
 							</div>
 							<div className="col-3 category-list align-self-start">
 								<h4>Categories</h4>
-								<a href="#" onClick={()=>{this.handleCategoryClick(undefined)}}>All</a>
+								{/*<a href="#" onClick={()=>{this.handleCategoryClick(undefined)}}>All</a>*/}
 								{this.props.blogcategories.map((category) => {
-									if (this.state.category !== category.id){
-										return (<div><a href="#" onClick={()=>{this.handleCategoryClick(category.id)}}>{category.name}</a></div>)
-									} else {
-										return (<div><span>{category.name}</span></div>)
-									}
+									return (<div className="form-check"><input className="form-check-input" type="checkbox" onChange={()=>{this.handleCategoryClick(category.id)}} /><label className="form-check-label">{category.name}</label></div>)
 								})}
 							</div>
 							<div className="col-12">

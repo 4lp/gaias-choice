@@ -26,7 +26,10 @@ export const fetchBlogposts = (options) => {
 		}
 
 		if (options.category) {
-			queryParams.push("categories=" + options.category);
+			let categories;
+			options.category.forEach((category)=>{
+				queryParams.push("categories=" + category);
+			});
 		}
 
 		if (options.permalink) {

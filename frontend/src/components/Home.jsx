@@ -36,18 +36,18 @@ class Home extends Component {
 					<div className="row">
 							<div className="main-photo col-12">
 								<div className="main-photo-text">
-									<h1><span><strong>Gaia&apos;s Choice</strong></span></h1>
+									<h1 className="animated bounceInLeft"><span><strong>Gaia&apos;s Choice</strong></span></h1>
 									<br />
-									<Link to="/products"><button className="btn btn-primary">Shop Now&nbsp;&nbsp;▸</button></Link>
-									&nbsp;
-									<Link to="/whatiscbd"><button className="btn btn-secondary">About CBD&nbsp;&nbsp;▸</button></Link>
+									<Link className="animated bounceInLeft" to="/products"><button className="btn btn-primary animated bounceInLeft">Shop Now&nbsp;&nbsp;▸</button></Link>
+									&nbsp;	
+									<Link className="animated bounceInLeft" to="/whatiscbd"><button className="btn btn-secondary animated bounceInLeft">About CBD&nbsp;&nbsp;▸</button></Link>
 									<br />
 									<div className="row justify-content-center">
 									<div style={{width: "50%"}} className="justify-content-center">
-										<hr />
+										<hr className="animated fadeIn" />
 									</div>
 									</div>
-									<h4><span>To provide wholesome, trustworthy products that will promote the well being of our community.</span></h4>
+									<h4 className="animated bounceInLeft"><span>To provide wholesome, trustworthy products that will promote the well being of our community.</span></h4>
 								</div>
 							</div>
 							{prelaunch_code}
@@ -58,7 +58,7 @@ class Home extends Component {
 									</div>
 								</div>
 							</div>
-							<div className="container-fluid color-div-1">
+							<div className="container-fluid">
 								<div className="row justify-content-center">
 									<div className="col-12 col-md-6">
 										<div id="carouselExampleIndicators" className="carousel slide" data-ride="carousel">
@@ -90,14 +90,6 @@ class Home extends Component {
 												<span className="sr-only">Next</span>
 											</a>
 										</div>
-									</div>
-								</div>
-							</div>
-							<hr />
-							<div className="narrow-section background-div d-flex">
-								<div className="row align-items-center">
-									<div className="col align-self-center">
-								With a combined 17 years in product manufacturing, a former research and develop chemist at a top medical cannabis company, and the drive and passion to provide natural and safe products, Gaia's Choice founders aim to better the community.
 									</div>
 								</div>
 							</div>
