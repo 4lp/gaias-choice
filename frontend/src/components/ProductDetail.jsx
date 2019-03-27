@@ -23,7 +23,7 @@ export default class ProductDetail extends Component {
 						<div className="row">
 							<div className="col-12 text-center">
 							</div>
-							<div className="col-6">
+							<div className="col-12 col-md-6">
 								<h1 className="text-center">{product[0].name}</h1>
 								<p>{product[0].description}</p>
 								<div className="text-center">
@@ -40,7 +40,7 @@ export default class ProductDetail extends Component {
 								))}
 								</p>
 							</div>
-							<div className="col-6">
+							<div className="col-12 col-md-6">
 								{images.map((image, index) => (
 									<div className="product-image" key={index}>
 										<img src={image}/>

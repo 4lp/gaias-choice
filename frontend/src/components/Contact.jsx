@@ -117,13 +117,13 @@ class Contact extends Component {
 									</div>
 									<div className="form-group">
 										<label htmlFor="message">Your message</label>
-										<input 
+										<textarea 
 											className="form-control" 
 											message="message" 
 											id="message" 
 											onChange={e => this.setState({message: e.target.value})}
 											value={this.state.message}
-											type="text"
+											rows="10"
 										/>
 									</div>
 									</fieldset>

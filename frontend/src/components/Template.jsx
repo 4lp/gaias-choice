@@ -9,7 +9,9 @@ export default class Template extends Component {
 		return (
 			<div>
 				<Header />
-				{React.cloneElement(props.component, props={props})}
+				<div id="content">
+					{React.cloneElement(props.component, props={props})}
+				</div>
 				<Footer products={this.props.products}/>
 			</div>
 		)

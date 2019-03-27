@@ -53,7 +53,7 @@ class Header extends Component {
 			}
 			return(
 				<div>
-					<nav id="header" className="navbar fixed-top navbar-expand-lg m0 p0" ref={ (divElement) => this.divElement = divElement}>
+					<nav id="header" className="navbar navbar-light bg-light fixed-top navbar-expand-lg m0 p0" ref={ (divElement) => this.divElement = divElement}>
 						<div className="container-fluid m0 p0">
 							<div className="row m0 p0" style={{width:'100%'}}>
 								{is_prelaunch &&
@@ -63,7 +63,7 @@ class Header extends Component {
 									<div className="promo col-12 text-center m0 p0">
 										<div className="alert alert-success alert-dismissable" role="alert">
 											<button type="button" className="close" data-dismiss="alert" aria-label="Close" onClick={() => this.dismissAlert()}><span aria-hidden="true">&times;</span></button>
-											<h4>DISCOUNTS</h4>
+											<h4>🎉DISCOUNTS</h4>
 											{Object.keys(discounts).map((key, index) => (
 												<span key={key}>{key} is discounted by {discounts[key]}!<br/></span>
 											))}
@@ -80,9 +80,19 @@ class Header extends Component {
 											<a target="_blank" rel="noopener noreferrer" href="https://linkedin.com/company/gaiaschoice"><i className="fab fa-linkedin"></i></a>
 											<a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/channel/UCIA6YCQOD6aVraoRITio54A?view_as=subscriber"><i className="fab fa-youtube-square"></i></a>
 										</div>
-										<Link to="/" className="nav-brand col-3" style={{color: "black"}}><h4>Gaia&apos;s Choice</h4></Link>
-										<div className="collapse navbar-collapse col-9">
-											<ul className="navbar-nav mr-auto mt-2 mt-lg-0 flex-row">
+										<Link to="/" className="nav-brand col-10 col-md-3" style={{color: "black"}}><h4>Gaia&apos;s Choice</h4></Link>
+										<button className="navbar-toggler" 
+											type="button" 
+											data-toggle="collapse" 
+											data-target="#navbarToggler" 
+											aria-controls="navbarToggler" 
+											aria-expanded="false" 
+											aria-label="Toggle navigation"
+										>
+											<span className="navbar-toggler-icon"></span>
+										</button>
+										<div className="collapse navbar-collapse col-2 col-md-9" id="navbarToggler">
+											<ul className="navbar-nav mr-auto mt-2 mt-lg-0 flex-md-row">
 												<li className="nav-item active"><Link to="/" className="nav-link">Home</Link></li>
 												<li className="nav-item dropdown">
 													<Link className="nav-link dropdown-toggle" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false" to="/products">

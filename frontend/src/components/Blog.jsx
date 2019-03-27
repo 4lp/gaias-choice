@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {blogposts} from "../actions";
 import {blogcategories} from "../actions";
+import Collapsible from 'react-collapsible';
+import MediaQuery from 'react-responsive';
 
 class Blog extends Component {
 	state = {
@@ -44,7 +46,7 @@ class Blog extends Component {
 							<div className="col-12 text-center">
 								<h1>Blog</h1>
 							</div>
-							<div className="col-9">
+							<div className="col-12 col-md-9 order-sm-2 order-1">
 								{this.props.blogposts.blogposts.results.map((blogpost) => (
 									<div key={blogpost.id}>
 										<h4>{blogpost.title}</h4>
@@ -59,14 +61,24 @@ class Blog extends Component {
 									</div>
 								))}
 							</div>
-							<div className="col-3 category-list align-self-start">
-								<h4>Categories</h4>
-								{/*<a href="#" onClick={()=>{this.handleCategoryClick(undefined)}}>All</a>*/}
-								{this.props.blogcategories.map((category) => {
-									return (<div className="form-check"><input className="form-check-input" type="checkbox" onChange={()=>{this.handleCategoryClick(category.id)}} /><label className="form-check-label">{category.name}</label></div>)
-								})}
-							</div>
-							<div className="col-12">
+							<MediaQuery query="(max-device-width: 576px)">
+								<Collapsible trigger="Categories" className="col-12 order-sm-1 align-self-start text-right">
+									<div>
+										{this.props.blogcategories.map((category) => {
+											return (<div className="form-check"><input className="form-check-input" type="checkbox" onChange={()=>{this.handleCategoryClick(category.id)}} /><label className="form-check-label">{category.name}</label></div>)
+										})}
+									</div>
+								</Collapsible>
+							</MediaQuery>
+							<MediaQuery query="(min-device-width: 576px)">
+								<div className="col-12 col-md-3 order-2 category-list align-self-start">
+									<h4>Categories</h4>
+									{this.props.blogcategories.map((category) => {
+										return (<div className="form-check"><input className="form-check-input" type="checkbox" onChange={()=>{this.handleCategoryClick(category.id)}} /><label className="form-check-label">{category.name}</label></div>)
+									})}
+								</div>
+							</MediaQuery>
+							<div className="col-12 order-3">
 								{this.state.page !== 1 &&
 									<a href="#" className="pagination" onClick={()=>{this.handlePageClick(this.state.page-1)}}>«</a>
 								}

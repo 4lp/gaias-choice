@@ -1,4 +1,3 @@
-@import url('../node_modules/react-mde/lib/styles/css/react-mde-all.css');
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300');
 @import url('https://fonts.googleapis.com/css?family=Comfortaa');
 
@@ -159,10 +158,12 @@ img {
 	background-color: rgb(80, 80, 80, 0.5);
 	padding: 7px;
 	border-radius: 10px;
+	box-decoration-break: clone;
 }
 .narrow-section {
 	padding: 0 10% 0 10%;
 	min-height: 200px;
+	background-color: var(--accenttwo);
 }
 
 .svg-inline--fa{
@@ -177,6 +178,16 @@ img {
 	min-height: 85px;
 }
 
+.navbar-toggler {
+	border: none;
+	float: right;
+	margin-top: -15px;
+}
+
+.alert h4{
+	margin-left: 20px;
+}
+
 #footer {
 	margin-top: 50px;
 	padding: 20px 20px 0 20px;
@@ -184,6 +195,10 @@ img {
 
 #footer p {
 	border: none;
+}
+
+#content {
+	padding-bottom: 50px;
 }
 
 .carousel{
@@ -315,15 +330,58 @@ img {
 	font-size: .8em;
 }
 
-/* Colors */
-
-.corner-ribbon.white{background: #f0f0f0; color: #555;}
-.corner-ribbon.black{background: #333;}
-.corner-ribbon.grey{background: #999;}
-.corner-ribbon.blue{background: #39d;}
-.corner-ribbon.green{background: #2c7;}
-.corner-ribbon.turquoise{background: #1b9;}
-.corner-ribbon.purple{background: #95b;}
 .corner-ribbon.red{background: #e43;}
-.corner-ribbon.orange{background: #e82;}
-.corner-ribbon.yellow{background: #ec0;}
+
+/* mobile styles */
+@media (max-width: 576px) {
+
+	.carousel{
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	#footer .col-12 {
+		padding-bottom: 20px;
+	}
+
+	.main-photo-text span {
+		line-height: 1.75em;
+	}
+
+	.map iframe {
+		max-width: 100%;
+		margin-top: 50px;
+	}
+	.socials, .nav-brand {
+		text-align: center;
+	}
+	.nav-brand h4 {
+		padding-left: 20%;
+	}
+	.navbar-collapse{
+		max-width: none;
+	}
+	.dropdown-menu{
+		border: none;
+		background-color: var(--accenttwo);
+	}
+	.Collapsible {
+		cursor: pointer;
+		text-align: right;
+		width: 100%;
+		padding: 0 20px 20px 20px;
+	}
+
+	.Collapsible__contentInner, ul {
+		padding: 0;
+	}
+
+	.is-closed:after {
+		content: ' ▼';
+	}
+
+	.is-open:after {
+		content: ' ▲';
+	}
+
+}

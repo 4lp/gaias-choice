@@ -18,7 +18,7 @@ export default class Products extends Component {
 							{this.props.products.products.map((product) => {
 								let images = product.images.split(',');
 								return (
-									<div className="col-4 product-image text-center">
+									<div className="col-12 col-md-4 product-image text-center">
 										<div key={product.id}>
 											<h4><Link to={"/products/"+product.path}>{product.name}</Link></h4>
 											<Link to={"/products/"+product.path}><img src={images[0]} /></Link>
