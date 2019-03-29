@@ -13,9 +13,11 @@ class BlogCategorySerializer(serializers.ModelSerializer):
 
 class BlogpostSerializer(serializers.ModelSerializer):
     created_at = serializers.DateTimeField(format='%d-%m-%Y %I:%M%p')
+    owner_name= serializers.ReadOnlyField(source='owner.username')
+
     class Meta:
         model = Blogpost
-        fields = ('id', 'text', 'title', 'created_at', 'owner', 
+        fields = ('id', 'text', 'title', 'created_at', 'owner_name', 
                 'categories', 'permalink')
         
 class ProductSerializer(serializers.ModelSerializer):

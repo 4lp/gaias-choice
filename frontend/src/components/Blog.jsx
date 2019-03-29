@@ -55,7 +55,7 @@ class Blog extends Component {
 											</div>
 											<br/>
 											<br/>
-											<small>Posted by {blogpost.owner} at {blogpost.created_at}</small>
+											<small>Posted by {blogpost.owner_name} at {blogpost.created_at}</small>
 											<Link to={"/blog/"+blogpost.permalink}><small style={{float:"right"}}>Permalink</small></Link>
 										</p>
 									</div>

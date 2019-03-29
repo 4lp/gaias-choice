@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import Collapsible from 'react-collapsible';
 import {connect} from 'react-redux';
 import {products} from "../actions";
 import {settings} from "../actions";
+import MediaQuery from 'react-responsive';
 
 class Header extends Component {
 	state = {
@@ -31,8 +31,6 @@ class Header extends Component {
 		})
 		
 	}
-
-
 
 	render(){
 		let is_prelaunch;
@@ -64,9 +62,17 @@ class Header extends Component {
 										<div className="alert alert-success alert-dismissable" role="alert">
 											<button type="button" className="close" data-dismiss="alert" aria-label="Close" onClick={() => this.dismissAlert()}><span aria-hidden="true">&times;</span></button>
 											<h4>🎉DISCOUNTS</h4>
-											{Object.keys(discounts).map((key, index) => (
-												<span key={key}>{key} is discounted by {discounts[key]}!<br/></span>
-											))}
+											{Object.keys(discounts).map((key, index) => { 
+												if (key.substring(key.length-1) !== "s"){
+													return (
+														<span key={key}>{key} is discounted by {discounts[key]}!<br/></span>
+													)
+												} else {
+													return (
+														<span key={key}>{key} are discounted by {discounts[key]}!<br/></span>
+													)
+												}
+											})}
 										</div>
 									</div>
 								}
@@ -95,9 +101,17 @@ class Header extends Component {
 											<ul className="navbar-nav mr-auto mt-2 mt-lg-0 flex-md-row">
 												<li className="nav-item active"><Link to="/" className="nav-link">Home</Link></li>
 												<li className="nav-item dropdown">
-													<Link className="nav-link dropdown-toggle" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false" to="/products">
-														Products
-													</Link>
+
+													<MediaQuery query="(min-device-width: 576px)">
+														<Link className="nav-link dropdown-toggle" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false" to="/products">
+															Products
+														</Link>
+													</MediaQuery>
+													<MediaQuery query="(max-device-width: 576px)">
+														<a href="#" className="nav-link dropdown-toggle" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false">
+															Products
+														</a>
+													</MediaQuery>
 													<div className="dropdown-menu" aria-labelledby="navbarDropdown">
 														{this.props.products.products.map((product) => (
 															<div key={product.id}>

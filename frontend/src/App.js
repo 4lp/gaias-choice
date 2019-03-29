@@ -22,6 +22,7 @@ import Benefits from "./components/Benefits";
 import WhatIsCBD from "./components/WhatIsCBD";
 import WhyWereDoingThis from "./components/WhyWereDoingThis";
 import ProductDetail from "./components/ProductDetail";
+import ScrollToTop from "./components/ScrollToTop";
 import Template from "./components/Template";
 import {products} from "./actions";
 
@@ -40,29 +41,31 @@ class RootContainerComponent extends Component {
 		if (!this.props.products.isLoading){
 			return (
 				<BrowserRouter>
-					<div>
+					<ScrollToTop>
 						<div>
-							<Switch>
-								<Route exact path="/contact" render={(props) => ( <Template component={<ContactPage/>} products={this.props.products}/> )} />
-								<Route exact path="/blog/:permalink" render={(props) => ( <Template component={<BlogPermalink/>} products={this.props.products} {...props}/> )} />
-								<Route exact path="/blog" render={(props) => ( <Template component={<Blog/>} products={this.props.products}/> )} />
-								<Route exact path="/products" render={(props) => ( <Template component={<Products products={this.props.products}/>} products={this.props.products}/> )} />
-								<Route path="/products/:productname" render={(props) => ( <Template component={<ProductDetail products={this.props.products} />} products={this.props.products} {...props}/> )} />
-								<Route exact path="/mission-statement" render={(props) => (<Template component={<MissionStatement/>} products={this.props.products}/> )} />
-								<Route exact path="/experience" render={(props) => ( <Template component={<Experience/>} products={this.props.products}/> )} />
-								<Route exact path="/what-is-cbd" render={(props) => ( <Template component={<WhatIsCBD/>} products={this.props.products}/> )} />
-								<Route exact path="/benefits" render={(props) => ( <Template component={<Benefits/>} products={this.props.products}/> )} />
-								<Route exact path="/who-can-use" render={(props) => ( <Template component={<WhoCanUse/>} products={this.props.products}/> )} />
-								<Route exact path="/faq" render={(props) => ( <Template component={<Faq/>} products={this.props.products}/> )} />
-								<Route exact path="/why-were-doing-this" render={(props) => (<Template component={<WhyWereDoingThis/>} products={this.props.products}/> )} />
-								<Route path="/" render={(props) => ( <Template component={<Home/>} products={this.props.products}/> )} />
-								<Route component={NotFound} />
-							</Switch>
+							<div>
+								<Switch>
+									<Route exact path="/contact" render={(props) => ( <Template component={<ContactPage/>} products={this.props.products}/> )} />
+									<Route exact path="/blog/:permalink" render={(props) => ( <Template component={<BlogPermalink/>} products={this.props.products} {...props}/> )} />
+									<Route exact path="/blog" render={(props) => ( <Template component={<Blog/>} products={this.props.products}/> )} />
+									<Route exact path="/products" render={(props) => ( <Template component={<Products products={this.props.products}/>} products={this.props.products}/> )} />
+									<Route path="/products/:productname" render={(props) => ( <Template component={<ProductDetail products={this.props.products} />} products={this.props.products} {...props}/> )} />
+									<Route exact path="/mission-statement" render={(props) => (<Template component={<MissionStatement/>} products={this.props.products}/> )} />
+									<Route exact path="/experience" render={(props) => ( <Template component={<Experience/>} products={this.props.products}/> )} />
+									<Route exact path="/what-is-cbd" render={(props) => ( <Template component={<WhatIsCBD/>} products={this.props.products}/> )} />
+									<Route exact path="/benefits" render={(props) => ( <Template component={<Benefits/>} products={this.props.products}/> )} />
+									<Route exact path="/who-can-use" render={(props) => ( <Template component={<WhoCanUse/>} products={this.props.products}/> )} />
+									<Route exact path="/faq" render={(props) => ( <Template component={<Faq/>} products={this.props.products}/> )} />
+									<Route exact path="/why-were-doing-this" render={(props) => (<Template component={<WhyWereDoingThis/>} products={this.props.products}/> )} />
+									<Route path="/" render={(props) => ( <Template component={<Home/>} products={this.props.products}/> )} />
+									<Route component={NotFound} />
+								</Switch>
+							</div>
+							<div>
+								<ModalContainer />
+							</div>
 						</div>
-						<div>
-							<ModalContainer />
-						</div>
-					</div>
+					</ScrollToTop>
 				</BrowserRouter>
 			);
 		} else {
