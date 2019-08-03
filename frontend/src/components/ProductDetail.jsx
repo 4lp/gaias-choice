@@ -19,15 +19,15 @@ export default class ProductDetail extends Component {
 		if (!this.props.products.isLoading) {
 			return(
 				<div>
-					<div className="container">
+				{/*<div className="container-fluid product-details-container" style={{backgroundImage: 'url('+images[0]+')'}}>*/}
+					<div className="container-fluid product-details-container">
 						<div className="row">
-							<div className="col-12 text-center">
+							<div className="col-12 text-center product-name">
+								<h1 className="text-center">{product[0].name}</h1>
 							</div>
 							<div className="col-12 col-md-6">
-								<h1 className="text-center">{product[0].name}</h1>
-								<p>{product[0].description}</p>
+								<p className="product-info" dangerouslySetInnerHTML={{ __html: product[0].description}}></p>
 								<div className="text-center">
-									<button className="btn btn-primary"><strong>Buy now!</strong></button>
 								</div>
 								<br/>
 								<h3 className="text-center">Reviews</h3>
@@ -46,6 +46,9 @@ export default class ProductDetail extends Component {
 										<img src={image}/>
 									</div>
 								))}
+								<div className="text-center">
+									<button type="button" className="btn btn-primary btn-lg"><strong>Buy now!</strong></button>
+								</div>
 							</div>
 						</div>
 					</div>

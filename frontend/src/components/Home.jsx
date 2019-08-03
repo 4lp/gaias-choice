@@ -38,23 +38,25 @@ class Home extends Component {
 								<div className="main-photo-text">
 									<h1 className="animated bounceInLeft"><span><strong>Gaia&apos;s Choice</strong></span></h1>
 									<br />
-									<Link className="animated bounceInLeft" to="/products"><button className="btn btn-primary animated bounceInLeft">Shop Now&nbsp;&nbsp;▸</button></Link>
+									<Link className="animated bounceInLeft" to="/products"><button className="btn btn-primary animated bounceInLeft"><strong>Shop Now&nbsp;&nbsp;▸</strong></button></Link>
 									&nbsp;	
-									<Link className="animated bounceInLeft" to="/whatiscbd"><button className="btn btn-secondary animated bounceInLeft">About CBD&nbsp;&nbsp;▸</button></Link>
+									<Link className="animated bounceInLeft" to="/whatiscbd"><button className="btn btn-secondary animated bounceInLeft"><strong>About CBD&nbsp;&nbsp;▸</strong></button></Link>
 									<br />
 									<div className="row justify-content-center">
 									<div style={{width: "50%"}} className="justify-content-center">
 										<hr className="animated fadeIn" />
 									</div>
 									</div>
-									<h4 className="animated bounceInLeft"><span>To provide wholesome, trustworthy products that will promote the well being of our community.</span></h4>
+									<h4 className="animated bounceInLeft main-subtitle"><span>To provide wholesome, trustworthy products that will promote the well being of our community.</span></h4>
 								</div>
 							</div>
 							{prelaunch_code}
 							<div className="narrow-section container-fluid d-flex">
 								<div className="row align-items-center">
 									<div className="col align-self-center">
+										<h4 className="text-center">
 								With a combined 17 years in product manufacturing, a former research and develop chemist at a top medical cannabis company, and the drive and passion to provide natural and safe products, Gaia's Choice founders aim to better the community.
+										</h4>
 									</div>
 								</div>
 							</div>

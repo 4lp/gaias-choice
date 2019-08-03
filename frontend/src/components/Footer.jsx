@@ -8,7 +8,7 @@ export default class Footer extends Component {
 			<div>
 				<div id="footer" style={this.props.style}>
 					<div className="row">
-						<div className="col-12 col-md-3 text-center">
+			{/*<div className="col-12 col-md-3 text-center">
 							<p><small>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ultrices molestie mauris, sed tincidunt dolor porttitor in. Mauris suscipit metus nec ullamcorper dictum. Vestibulum et semper velit, ac convallis velit. Aliquam at libero nunc. Nullam vel lacus ornare, congue enim non, congue justo. Mauris convallis velit dui, ac malesuada leo blandit at. Praesent non vulputate urna. Curabitur a urna eget purus tempus euismod. Nam varius luctus elit vitae tristique.</small></p>
 						</div>
 						<div className="col-12 col-md-3 text-center">
@@ -33,7 +33,7 @@ export default class Footer extends Component {
 							<div>								
 								<i className="far fa-envelope"></i>
 							</div>
-						</div>
+						</div>*/}
 						<div className="col-12 text-center">
 							<h6>Check us out elsewhere on the web!</h6>
 							<a target="_blank" rel="noopener noreferrer" href="https://twitter.com/ChooseGaias"><i className="fab fa-twitter-square"></i></a>

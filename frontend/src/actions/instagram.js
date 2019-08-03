@@ -3,9 +3,9 @@ import Instagram from 'node-instagram';
 export const fetchInstagram = () => {
 	return (dispatch, getState) => {
 		const instagram = new Instagram({
-		  clientId: 'dc5b439fcb7e4e63afc51d5bf7f6e3e3',
+		  clientId: 'c0d94c641c794ce08c286921f925fcd7',
 		  //clientSecret: 'your-client-secret',
-		  accessToken: '7319332388.1677ed0.502bab43ca9f4c89853babd698491324',
+		  accessToken: '10222437627.c0d94c6.930eca5ec3cf4eff8f05d6e2c989b882',
 		});
 		
 		console.log(instagram.request)

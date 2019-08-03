@@ -120,7 +120,8 @@ class Header extends Component {
 														))}
 													</div>
 												</li>
-												<li className="nav-item dropdown">
+												<li className="nav-item active"><Link to="experience" className="nav-link">About Us</Link></li>
+												{/*<li className="nav-item dropdown">
 													<a className="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 														About Us	
 													</a>
@@ -129,8 +130,9 @@ class Header extends Component {
 													  <Link className="dropdown-item" to="/experience">Experience</Link>
 													  <Link className="dropdown-item" to="/why-were-doing-this">Why we&apos;re doing this</Link>
 													</div>
-												</li>
-												<li className="nav-item dropdown">
+												</li>*/}
+												<li className="nav-item active"><Link to="faq" className="nav-link">FAQ</Link></li>
+												{/*<li className="nav-item dropdown">
 													<a className="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 														Learn More	
 													</a>
@@ -140,7 +142,7 @@ class Header extends Component {
 													  <Link className="dropdown-item" to="who-can-use">Who Can Use CBD?</Link>
 													  <Link className="dropdown-item" to="faq">FAQ</Link>
 													</div>
-												</li>
+												</li>*/}
 												<li className="nav-item active"><Link to="/blog" className="nav-link">Blog</Link></li>
 												{ is_prelaunch ?
 													<li className="nav-item active"><Link to="/products" className="nav-link">Shop</Link></li> : 

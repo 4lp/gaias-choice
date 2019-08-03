@@ -178,8 +178,8 @@ REST_FRAMEWORK = {
 # EMAIL_USE_TLS = True
 EMAIL_HOST = 'mail.gandi.net'
 EMAIL_PORT = 25 
-EMAIL_HOST_USER = 'slapnote-admin@slaponic.us'
-DEFAULT_FROM_EMAIL = 'slapnote-admin@slaponic.us'
+EMAIL_HOST_USER = 'gaiaschoice@gmail.com'
+DEFAULT_FROM_EMAIL = 'gaiaschoice@gmail.com'
 EMAIL_HOST_PASSWORD = get_secret("EMAIL_HOST_PASSWORD")
 
 # Gmail settings - keeping just in case we need to test again

@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300');
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans:300,700');
 @import url('https://fonts.googleapis.com/css?family=Comfortaa');
 
 :root {
-	--accent: #DCAE1D;
+	--accent: #15538a;
 	--primary: #00303F;
 	--secondary: #7A9D96;
 	--tertiary: #CAE4DB;
@@ -90,7 +90,7 @@ td {
 }
 
 p{
-    background-color: rgb(255,255,255,0.5);
+    background-color: rgb(255,255,255,0.6);
     padding: 20px;
 	border-radius: 10px;
 	border: 1px lightgrey solid;
@@ -99,6 +99,10 @@ p{
 img {
 	border-radius: 10px;
 	/* border: 1px lightgrey solid; */
+}
+
+h1 {
+	font-size: 3.5em;
 }
 
 /* helper classes */
@@ -112,7 +116,7 @@ img {
 }
 
 .category-list{
-    background-color: rgb(255,255,255,0.5);
+    background-color: rgb(255,255,255,0.8);
 	border: 1px lightgrey solid;
 	border-radius: 10px;
     padding: 0 20px 20px 20px;
@@ -132,16 +136,17 @@ img {
 	/* background-color: var(--tertiary); */
 	/* border-color: var(--tertiary); */
 	border: 0;
-	background: linear-gradient(180deg, var(--accent),var(--accenttwo));
+	background: linear-gradient(180deg, var(--secondary),var(--accenttwo));
 	border-radius: 0;
 }
 .main-photo {
-	background-image: url("https://img1.wsimg.com/isteam/ip/450350c3-44ea-4c81-be69-6dae3eaed7d9/bf7496f8-01c1-44d4-b534-d19796038d65.jpg/:/rs=w:1600,h:600,cg:true,m/cr=w:1600,h:600,a:cc");
+	{/*	background-image: url("https://spark.adobe.com/page/M8baiX0WWgKwv/images/5d2ddb25-4ca3-44e4-b560-8ef36246e429.png?asset_id=b0653427-457f-4a6f-84dc-ac7ee476ab2f&img_etag=c7de62aa427f90ccb8358324c249a344&size=2560");
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: cover;*/}
 	margin-top: -30px;
+	height: 900px;
 }
 
 .close {
@@ -154,12 +159,19 @@ img {
 }
 
 .main-photo-text h1 span, .main-photo-text h4 span{
-	color: var(--accent);
-	background-color: rgb(80, 80, 80, 0.5);
+	color: whitesmoke;
+	background-color: rgb(80, 80, 80, 0.7);
 	padding: 7px;
 	border-radius: 10px;
 	box-decoration-break: clone;
 }
+
+.main-subtitle {
+	width: 50%;
+	margin-left: 25%;
+	text-align: center;
+}
+
 .narrow-section {
 	padding: 0 10% 0 10%;
 	min-height: 200px;
@@ -189,7 +201,7 @@ img {
 }
 
 #footer {
-	margin-top: 50px;
+	margin-top: -50px;
 	padding: 20px 20px 0 20px;
 }
 
@@ -199,6 +211,103 @@ img {
 
 #content {
 	padding-bottom: 50px;
+}
+
+.product-info {
+    background-color: rgb(255,255,255,0.6);
+}
+
+.product-info p, span {
+	background: none;
+	background-color: none !important;
+	margin: none !important;
+ 	padding: none !important;
+	border: none !important;
+	font-size: 1.2em !important;
+}
+
+.product-details-container{
+	background-image: url('https://i.imgur.com/rbigpx3.jpg');
+	background-attachment: fixed;
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.product-name{
+	margin: 20px;
+}
+
+.product-name h1{
+	width: 50%;
+	margin-left: 25%;
+	color: whitesmoke;
+	background-color: rgb(80, 80, 80, 0.7);
+}
+
+.aboutus {
+	background-image: url('https://i.imgur.com/lgXXFeZ.jpg');
+	background-attachment: fixed;
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.aboutus p {
+	font-size: 1.5em;
+}
+
+.aboutus h2 {
+    background-color: rgb(255,255,255,0.6);
+	width: 50%;
+	margin-left: 25%;
+	margin-top: 20px;
+}
+
+.aboutus-row{
+	margin-left: 15%;
+	margin-right: 15%
+}
+
+.blog{
+	background-image: url('https://i.imgur.com/5sr9J2u.jpg');
+	background-attachment: fixed;
+	background-position: bottom;
+	background-repeat: no-repeat;
+	background-size: cover;}
+
+.blog-row{
+	margin-left: 15%;
+	margin-right: 15%
+}
+
+.blog-row h1{
+	background-color: rgb(255,255,255,0.8);
+	width: 50%;
+	margin-left: 25%;
+	margin-top: 20px;
+}
+
+.blog-row h4 {
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+
+.blog-row h4 span{
+	background-color: rgb(255,255,255,0.8);
+	padding: 10px;
+}
+
+.faq{
+	background-image: url('https://i.imgur.com/xzoO38l.jpg');
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;}
+
+.faq-row{
+	margin-left: 15%;
+	margin-right: 15%
 }
 
 .carousel{
@@ -212,6 +321,11 @@ img {
 
 .home-container {
 	margin-top: -1.5%;
+	background-image: url("https://spark.adobe.com/page/M8baiX0WWgKwv/images/5d2ddb25-4ca3-44e4-b560-8ef36246e429.png?asset_id=b0653427-457f-4a6f-84dc-ac7ee476ab2f&img_etag=c7de62aa427f90ccb8358324c249a344&size=2560");
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .product-image img{
@@ -233,7 +347,7 @@ img {
 
 .btn-primary{
 	background-color: var(--accent);
-	color: var(--primary);
+	color: white;
 	border: none;
 }
 

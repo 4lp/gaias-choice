@@ -41,15 +41,15 @@ class Blog extends Component {
 			let pages = Math.floor(this.props.blogposts.blogposts.count / 5) + 1;
 			return(
 				<div>
-					<div className="container">
-						<div className="row">
+					<div className="container-fluid blog">
+						<div className="row blog-row">
 							<div className="col-12 text-center">
 								<h1>Blog</h1>
 							</div>
 							<div className="col-12 col-md-9 order-sm-2 order-1">
 								{this.props.blogposts.blogposts.results.map((blogpost) => (
 									<div key={blogpost.id}>
-										<h4>{blogpost.title}</h4>
+										<h4><span>{blogpost.title}</span></h4>
 										<p>
 											<div dangerouslySetInnerHTML={{__html:blogpost.text}}>
 											</div>

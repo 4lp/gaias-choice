@@ -14,11 +14,155 @@ export default class Faq extends Component {
 	render(){
 		return (
 			<div>
-				<div className="container">
-					<div className="row">
+				<div className="container-fluid faq">
+					<div className="row faq-row">
 						<div className="col-12">
-							<h3 className="text-center">Faq</h3>
+							<h3 className="text-center">F.A.Q.</h3>
+							<p>
+								Curious to learn why everyone is talking about CBD? Well, you have come to the right place! This page will lead you through all sorts of CBD knowledge that Gaia’s various experts have mapped out, just for you. Wanting to learn more? Check out our blog! We will keep you updated on the CBD market as well as providing additional information on what it can do for you!
+							</p>
 							<Accordion>
+								<AccordionItem>
+									<AccordionItemHeading>
+										<AccordionItemButton>
+											What is CBD?
+										</AccordionItemButton>
+									</AccordionItemHeading>
+									<AccordionItemPanel>
+										<p>
+											CBD is a term that has been thrown around a lot but what it stands for is Cannabidiol. 
+											CBD is one of the most common types of cannabinoid compounds found in the cannabis sativa plant of which accounts for up to 40% of the plant's extract. 
+											Δ9-THC, or commonly referred to as just THC, and CBD both have therapeutic applications. 
+											However, CBD is emerging as a therapeutic agent over THC since it lacks the psychoactive side effects found in THC. Or to put it simply, CBD will not get you “high”. 
+											The fact that CBD is non-psychoactive makes it an appealing option for anyone looking for relief from inflammation, pain, anxiety, psychosis, seizures, spasms, 
+											and other conditions without having to worry about disconcerting feelings of lethargy or dysphoria.
+										</p>
+									</AccordionItemPanel>
+								</AccordionItem>
+								<AccordionItem>
+									<AccordionItemHeading>
+										<AccordionItemButton>
+											What are the benefits of CBD?
+										</AccordionItemButton>
+									</AccordionItemHeading>
+									<AccordionItemPanel>
+										<p>
+											Because CBD oil has not been FDA approved as a cure or treatment for any disease, Gaia’s Choice does not make or support any medical claims related to hemp CBD oil. 
+											With that being said, there has been plenty of scientific and clinical research—much of it sponsored by the US government—underscores CBD’s potential as a treatment 
+											for a wide range of conditions, including arthritis, diabetes, alcoholism, MS, chronic pain, schizophrenia, PTSD, depression, antibiotic-resistant infections, 
+											epilepsy, and other neurological disorders. CBD has demonstrable neuroprotective and neurogenic effects, and its anti-cancer properties are currently being investigated 
+											at several academic research centers in the United States and elsewhere. 
+										</p>
+									</AccordionItemPanel>
+								</AccordionItem>
+								<AccordionItem>
+									<AccordionItemHeading>
+										<AccordionItemButton>
+											What is the endocannabinoid system?
+										</AccordionItemButton>
+									</AccordionItemHeading>
+									<AccordionItemPanel>
+										<p>
+											The endocannabinoid system (ECS) refers to endocannabinoids, the enzymes that regulate their production and degradation, and their receptors. Endocannabinoids are messengers, isolated from brain and peripheral tissues that communicate via cannabinoid receptors.
+										</p>
+									</AccordionItemPanel>
+								</AccordionItem>
+								<AccordionItem>
+									<AccordionItemHeading>
+										<AccordionItemButton>
+											Will CBD get me high?
+										</AccordionItemButton>
+									</AccordionItemHeading>
+									<AccordionItemPanel>
+										<p>
+											No, it will not is the simple answer. The psychoactive chemical from cannabis THC, is not present.
+										</p>
+									</AccordionItemPanel>
+								</AccordionItem>
+								<AccordionItem>
+									<AccordionItemHeading>
+										<AccordionItemButton>
+											Will I flunk a drug test if I medicate with CBD.
+										</AccordionItemButton>
+									</AccordionItemHeading>
+									<AccordionItemPanel>
+										<p>
+											A high-quality CBD product with minimal THC is incredibly unlikely to show up on a drug test. However, low quality CBD products may contain more traces of THC than they claim, in which case it is possible for a screening to pick up on the drug. (Research has shown that people who consume 6 mg of THC per day have a 25% chance of failing a drug test. This translates to about 2,000 mg per day of CBD oil with a THC content of 0.3% or less). 
+										</p>
+									</AccordionItemPanel>
+								</AccordionItem>
+								<AccordionItem>
+									<AccordionItemHeading>
+										<AccordionItemButton>
+											Does CBD interact with other medications?
+										</AccordionItemButton>
+									</AccordionItemHeading>
+									<AccordionItemPanel>
+										<p>
+											The simple answer is yes, it can. CBD has the potential to reduce or increase the effects of other drugs. If you are concerned always speak to a physician first.
+										</p>
+									</AccordionItemPanel>
+								</AccordionItem>
+								<AccordionItem>
+									<AccordionItemHeading>
+										<AccordionItemButton>
+											How do I know what doses of CBD I should take?
+										</AccordionItemButton>
+									</AccordionItemHeading>
+									<AccordionItemPanel>
+										<p>
+											As there is still a lot to learn about CBD there are not specific dosages that have been determined from medical trials. With that being said many companies have dosage suggestions and you can find our favorite here https://medium.com/cbd-origin/whats-the-best-cbd-dosage-81ec4f95503b The adage “start low and go slow” is always a good rule of thumb as well. If you have any concerns regarding the consumption or use of our products or and CBD product please talk to a medical professional.
+										</p>
+									</AccordionItemPanel>
+								</AccordionItem>
+								<AccordionItem>
+									<AccordionItemHeading>
+										<AccordionItemButton>
+											Is CBD natural?
+										</AccordionItemButton>
+									</AccordionItemHeading>
+									<AccordionItemPanel>
+										<p>
+											Yes, CBD is 100% naturally-occurring.
+										</p>
+									</AccordionItemPanel>
+								</AccordionItem>
+								<AccordionItem>
+									<AccordionItemHeading>
+										<AccordionItemButton>
+											Are there side effects of using CBD? Is it safe?
+										</AccordionItemButton>
+									</AccordionItemHeading>
+									<AccordionItemPanel>
+										<p>
+											Most research has concluded that CBD is perfectly safe with no known side effects, though some users have reported drowsiness, lightheadedness, low blood pressure, and dry mouth. With this industry still being very new and unregulated always do your research when looking into the CBD product supplier of your choice.
+										</p>
+									</AccordionItemPanel>
+								</AccordionItem>
+								<AccordionItem>
+									<AccordionItemHeading>
+										<AccordionItemButton>
+											Is there research being done about CBD?
+										</AccordionItemButton>
+									</AccordionItemHeading>
+									<AccordionItemPanel>
+										<p>
+											Yes, there are thousands of ongoing scientific studies at any given time. One of our favorites is the non-profit organization Project CBD, who are dedicated to documenting the research of this incredible compound.
+										</p>
+									</AccordionItemPanel>
+								</AccordionItem>
+								<AccordionItem>
+									<AccordionItemHeading>
+										<AccordionItemButton>
+											When does CBD expire?
+										</AccordionItemButton>
+									</AccordionItemHeading>
+									<AccordionItemPanel>
+										<p>
+											CBD products are good for at least a 1-year shelf life depending on the product you are purchasing. Things like oils and honey stay fresh longer than something like an edible. 
+										</p>
+									</AccordionItemPanel>
+								</AccordionItem>
 								<AccordionItem>
 									<AccordionItemHeading>
 										<AccordionItemButton>
@@ -80,6 +224,7 @@ export default class Faq extends Component {
 									</AccordionItemPanel>
 								</AccordionItem>
 							</Accordion>
+							Links go here!
 						</div>
 					</div>
 				</div>
