@@ -43,6 +43,10 @@ body {
 	background-color: var(--secondary);
 }
 
+/*.container-fluid{
+	padding: 0;
+}*/
+
 hr {
     display: block;
     height: 1px;
@@ -90,19 +94,24 @@ td {
 }
 
 p{
-    background-color: rgb(255,255,255,0.6);
+    background-color: rgb(255,255,255,0.7);
     padding: 20px;
-	border-radius: 10px;
+	/*border-radius: 10px;*/
 	border: 1px lightgrey solid;
+	box-shadow: 3px 3px rgb(0,0,0,0.7);
 }
 
 img {
-	border-radius: 10px;
+	/*border-radius: 10px;*/
 	/* border: 1px lightgrey solid; */
 }
 
 h1 {
 	font-size: 3.5em;
+}
+
+.decorated-link{
+	color: #17a2b8;
 }
 
 /* helper classes */
@@ -154,16 +163,20 @@ h1 {
 }
 
 .main-photo-text {
-	padding: 200px 0 200px 0;
+	padding: 50px 0 200px 0;
 	text-align: center;
 }
 
-.main-photo-text h1 span, .main-photo-text h4 span{
+.main-photo-text h1 span, .main-photo-text h3 span{
 	color: whitesmoke;
-	background-color: rgb(80, 80, 80, 0.7);
+	background-color: rgb(80, 80, 80, 0);
 	padding: 7px;
 	border-radius: 10px;
 	box-decoration-break: clone;
+}
+
+.main-photo img {
+	margin-bottom: 25px;
 }
 
 .main-subtitle {
@@ -214,35 +227,59 @@ h1 {
 }
 
 .product-info {
-    background-color: rgb(255,255,255,0.6);
+    background-color: rgb(255,255,255,0.8);
 }
 
 .product-info p, span {
 	background: none;
 	background-color: none !important;
 	margin: none !important;
- 	padding: none !important;
+ 	padding: 0 !important;
 	border: none !important;
-	font-size: 1.2em !important;
+	font-size: 1em !important;
+	box-shadow: none !important;
+    font-family: 'Josefin Sans', sans-serif !important;
+}
+
+.product-info ul, .product-info li {
+	list-style: disc !important;
 }
 
 .product-details-container{
-	background-image: url('https://i.imgur.com/rbigpx3.jpg');
+	/*background-image: url('https://i.imgur.com/rbigpx3.jpg');*/
+	background-image: url('https://i.imgur.com/5sr9J2u.jpg');
 	background-attachment: fixed;
 	background-position: bottom;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
 
-.product-name{
-	margin: 20px;
+.product-details-container button{
+	margin-top: 20px;
 }
+/*.product-name{
+	margin: 20px;
+}*/
 
-.product-name h1{
-	width: 50%;
+.product-name h2, .product-name h3{
+/*	width: 50%;
 	margin-left: 25%;
 	color: whitesmoke;
-	background-color: rgb(80, 80, 80, 0.7);
+	background-color: rgb(80, 80, 80, 0.7);*/
+	margin-top: 20px;
+	margin-bottom: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgb(255,255,255,0.8);
+	width: 100%;
+}
+
+.page-title {
+	margin-top: 20px;
+	margin-bottom: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgb(255,255,255,0.8);
 }
 
 .aboutus {
@@ -258,10 +295,14 @@ h1 {
 }
 
 .aboutus h2 {
-    background-color: rgb(255,255,255,0.6);
-	width: 50%;
-	margin-left: 25%;
 	margin-top: 20px;
+	margin-bottom: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgb(255,255,255,0.6);
+	width: 100%;
+	/*margin-left: 25%;
+	margin-top: 20px;*/
 }
 
 .aboutus-row{
@@ -270,7 +311,8 @@ h1 {
 }
 
 .blog{
-	background-image: url('https://i.imgur.com/5sr9J2u.jpg');
+	/*background-image: url('https://i.imgur.com/5sr9J2u.jpg');*/
+	background-image: url('https://i.imgur.com/PaMGYyw.jpg');
 	background-attachment: fixed;
 	background-position: bottom;
 	background-repeat: no-repeat;
@@ -321,9 +363,9 @@ h1 {
 
 .home-container {
 	margin-top: -1.5%;
-	background-image: url("https://spark.adobe.com/page/M8baiX0WWgKwv/images/5d2ddb25-4ca3-44e4-b560-8ef36246e429.png?asset_id=b0653427-457f-4a6f-84dc-ac7ee476ab2f&img_etag=c7de62aa427f90ccb8358324c249a344&size=2560");
+	background-image: url("https://i.imgur.com/G5XHzbD.jpg");
 	background-attachment: fixed;
-	background-position: center;
+	background-position: bottom;
 	background-repeat: no-repeat;
 	background-size: cover;
 }
@@ -333,7 +375,7 @@ h1 {
 }
 
 .product-image {
-	padding: 0 10px 50px 10px;
+	/*padding: 0 10px 50px 10px;*/
 }
 
 .pagination {
@@ -498,4 +540,37 @@ h1 {
 		content: ' ▲';
 	}
 
+}
+
+/* page specific styles */
+#product-page {
+	background-image: url("https://i.imgur.com/YRZyR8Z.jpg");
+	background-position: bottom;
+	margin-bottom: 50px;
+}
+
+.product-detail-left {
+	position: fixed;
+	margin-left: 40%;
+	margin-top: 120px;
+	width: 31.5%;
+}
+
+.product-detail-right {
+}
+
+.product-detail-left img {
+	width: 100%;
+	box-shadow: 10px 10px rgb(0,0,0,0.5);
+}
+
+.get-educated-page {
+	background-image: url("https://i.imgur.com/xHBBNGo.jpg");
+	background-size: cover;
+	background-position: top;
+	background-attachment: fixed;
+}
+
+.get-educated-page p {
+	background-color: rgba(255, 255, 255, 0.9) !important;
 }

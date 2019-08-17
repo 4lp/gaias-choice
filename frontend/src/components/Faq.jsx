@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 import {
     Accordion,
     AccordionItem,
@@ -17,28 +18,11 @@ export default class Faq extends Component {
 				<div className="container-fluid faq">
 					<div className="row faq-row">
 						<div className="col-12">
-							<h3 className="text-center">F.A.Q.</h3>
+							<h3 className="text-center page-title">F.A.Q.</h3>
 							<p>
-								Curious to learn why everyone is talking about CBD? Well, you have come to the right place! This page will lead you through all sorts of CBD knowledge that Gaia’s various experts have mapped out, just for you. Wanting to learn more? Check out our blog! We will keep you updated on the CBD market as well as providing additional information on what it can do for you!
+								Have a question? Check out the answers below to some of our frequently asked questions! Not seeing what you are looking for? That’s OK! <Link className="decorated-link" to="/contact">Contact us</Link> and we will get back to you as soon as we can. 
 							</p>
-							<Accordion>
-								<AccordionItem>
-									<AccordionItemHeading>
-										<AccordionItemButton>
-											What is CBD?
-										</AccordionItemButton>
-									</AccordionItemHeading>
-									<AccordionItemPanel>
-										<p>
-											CBD is a term that has been thrown around a lot but what it stands for is Cannabidiol. 
-											CBD is one of the most common types of cannabinoid compounds found in the cannabis sativa plant of which accounts for up to 40% of the plant's extract. 
-											Δ9-THC, or commonly referred to as just THC, and CBD both have therapeutic applications. 
-											However, CBD is emerging as a therapeutic agent over THC since it lacks the psychoactive side effects found in THC. Or to put it simply, CBD will not get you “high”. 
-											The fact that CBD is non-psychoactive makes it an appealing option for anyone looking for relief from inflammation, pain, anxiety, psychosis, seizures, spasms, 
-											and other conditions without having to worry about disconcerting feelings of lethargy or dysphoria.
-										</p>
-									</AccordionItemPanel>
-								</AccordionItem>
+							<Accordion allowMultipleExpanded="true" allowZeroExpanded="true">
 								<AccordionItem>
 									<AccordionItemHeading>
 										<AccordionItemButton>
@@ -88,6 +72,8 @@ export default class Faq extends Component {
 									<AccordionItemPanel>
 										<p>
 											A high-quality CBD product with minimal THC is incredibly unlikely to show up on a drug test. However, low quality CBD products may contain more traces of THC than they claim, in which case it is possible for a screening to pick up on the drug. (Research has shown that people who consume 6 mg of THC per day have a 25% chance of failing a drug test. This translates to about 2,000 mg per day of CBD oil with a THC content of 0.3% or less). 
+											<br/>
+											<a href="https://www.usdrugtestcenters.com/drug-test-blog/181/can-you-fail-a-drug-test-due-to-cbd.html" className="decorated-link" target="_blank">More info here</a>
 										</p>
 									</AccordionItemPanel>
 								</AccordionItem>
@@ -111,7 +97,7 @@ export default class Faq extends Component {
 									</AccordionItemHeading>
 									<AccordionItemPanel>
 										<p>
-											As there is still a lot to learn about CBD there are not specific dosages that have been determined from medical trials. With that being said many companies have dosage suggestions and you can find our favorite here https://medium.com/cbd-origin/whats-the-best-cbd-dosage-81ec4f95503b The adage “start low and go slow” is always a good rule of thumb as well. If you have any concerns regarding the consumption or use of our products or and CBD product please talk to a medical professional.
+											As there is still a lot to learn about CBD there are not specific dosages that have been determined from medical trials. With that being said many companies have dosage suggestions and you can <a className="decorated-link" target="_blank" href="https://medium.com/cbd-origin/whats-the-best-cbd-dosage-81ec4f95503b">find our favorite here.</a>  The adage “start low and go slow” is always a good rule of thumb as well. If you have any concerns regarding the consumption or use of our products or and CBD product please talk to a medical professional.
 										</p>
 									</AccordionItemPanel>
 								</AccordionItem>
@@ -136,6 +122,8 @@ export default class Faq extends Component {
 									<AccordionItemPanel>
 										<p>
 											Most research has concluded that CBD is perfectly safe with no known side effects, though some users have reported drowsiness, lightheadedness, low blood pressure, and dry mouth. With this industry still being very new and unregulated always do your research when looking into the CBD product supplier of your choice.
+											<br/>
+											<a href="https://purekana.com/blogs/news/cbd-faq-and-guide/" className="decorated-link" target="_blank">More info here</a>
 										</p>
 									</AccordionItemPanel>
 								</AccordionItem>
@@ -160,6 +148,8 @@ export default class Faq extends Component {
 									<AccordionItemPanel>
 										<p>
 											CBD products are good for at least a 1-year shelf life depending on the product you are purchasing. Things like oils and honey stay fresh longer than something like an edible. 
+											<br/>
+											<a href="https://www.dixiebotanicals.com/does-cbd-oil-go-bad/" className="decorated-link" target="_blank">More info here</a>
 										</p>
 									</AccordionItemPanel>
 								</AccordionItem>
@@ -224,7 +214,7 @@ export default class Faq extends Component {
 									</AccordionItemPanel>
 								</AccordionItem>
 							</Accordion>
-							Links go here!
+							<br/><br/>
 						</div>
 					</div>
 				</div>

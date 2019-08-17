@@ -29,7 +29,6 @@ class Header extends Component {
 			const height = this.divElement.clientHeight;
 			this.setState({ headerHeight: height });
 		})
-		
 	}
 
 	render(){
@@ -120,7 +119,13 @@ class Header extends Component {
 														))}
 													</div>
 												</li>
-												<li className="nav-item active"><Link to="experience" className="nav-link">About Us</Link></li>
+												{ is_prelaunch ?
+													<li className="nav-item active"><Link to="/products" className="nav-link">Shop</Link></li> : 
+													<li className="nav-item active"><a href="https://shop.gaiaschoice.com/" className="nav-link" target="_blank">Shop</a></li>
+												}
+												<li className="nav-item active"><Link to="/what-is-cbd" className="nav-link">Get Educated</Link></li>
+												<li className="nav-item active"><Link to="/faq" className="nav-link">FAQ</Link></li>
+												<li className="nav-item active"><Link to="/experience" className="nav-link">About Us</Link></li>
 												{/*<li className="nav-item dropdown">
 													<a className="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 														About Us	
@@ -131,7 +136,6 @@ class Header extends Component {
 													  <Link className="dropdown-item" to="/why-were-doing-this">Why we&apos;re doing this</Link>
 													</div>
 												</li>*/}
-												<li className="nav-item active"><Link to="faq" className="nav-link">FAQ</Link></li>
 												{/*<li className="nav-item dropdown">
 													<a className="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 														Learn More	
@@ -143,12 +147,8 @@ class Header extends Component {
 													  <Link className="dropdown-item" to="faq">FAQ</Link>
 													</div>
 												</li>*/}
-												<li className="nav-item active"><Link to="/blog" className="nav-link">Blog</Link></li>
-												{ is_prelaunch ?
-													<li className="nav-item active"><Link to="/products" className="nav-link">Shop</Link></li> : 
-													<li className="nav-item active"><a href="https://shop.medicalmarijuanainc.com/" className="nav-link" target="_blank">Shop</a></li>
-												}
 												<li className="nav-item active"><Link to="/contact" className="nav-link">Contact Us</Link></li>
+												<li className="nav-item active"><Link to="/blog" className="nav-link">Blog</Link></li>
 											</ul>
 										</div>
 									</div>
@@ -156,7 +156,7 @@ class Header extends Component {
 							</div>
 						</div>
 					</nav>
-					<div id="header-spacer" style={{marginBottom: this.state.headerHeight + 50 + 'px'}}></div>
+					<div id="header-spacer" style={{marginBottom: this.state.headerHeight  }}></div>
 				</div>
 			)
 		} else {

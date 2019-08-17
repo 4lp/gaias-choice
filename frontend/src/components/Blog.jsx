@@ -44,7 +44,7 @@ class Blog extends Component {
 					<div className="container-fluid blog">
 						<div className="row blog-row">
 							<div className="col-12 text-center">
-								<h1>Blog</h1>
+								<h2 className="page-title">Blog</h2>
 							</div>
 							<div className="col-12 col-md-9 order-sm-2 order-1">
 								{this.props.blogposts.blogposts.results.map((blogpost) => (

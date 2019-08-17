@@ -36,18 +36,19 @@ class Home extends Component {
 					<div className="row">
 							<div className="main-photo col-12">
 								<div className="main-photo-text">
-									<h1 className="animated bounceInLeft"><span><strong>Gaia&apos;s Choice</strong></span></h1>
+									{/*<h1 className="animated bounceInLeft"><span><strong>Gaia&apos;s Choice</strong></span></h1>*/}
+									<img src="https://i.imgur.com/8A0Uw4k.png" style={{width: '25%'}}/>
 									<br />
-									<Link className="animated bounceInLeft" to="/products"><button className="btn btn-primary animated bounceInLeft"><strong>Shop Now&nbsp;&nbsp;▸</strong></button></Link>
+									<Link className="animated bounceInLeft" to="/products"><button className="btn btn-info btn-lg animated bounceInLeft"><strong>Shop Now&nbsp;&nbsp;▸</strong></button></Link>
 									&nbsp;	
-									<Link className="animated bounceInLeft" to="/whatiscbd"><button className="btn btn-secondary animated bounceInLeft"><strong>About CBD&nbsp;&nbsp;▸</strong></button></Link>
+									<Link className="animated bounceInLeft" to="/whatiscbd"><button className="btn btn-lg btn-secondary animated bounceInLeft"><strong>About CBD&nbsp;&nbsp;▸</strong></button></Link>
 									<br />
 									<div className="row justify-content-center">
 									<div style={{width: "50%"}} className="justify-content-center">
 										<hr className="animated fadeIn" />
 									</div>
 									</div>
-									<h4 className="animated bounceInLeft main-subtitle"><span>To provide wholesome, trustworthy products that will promote the well being of our community.</span></h4>
+									<h3 className="animated bounceInLeft main-subtitle"><span>To provide wholesome, trustworthy products that will promote the well being of our community.</span></h3>
 								</div>
 							</div>
 							{prelaunch_code}
