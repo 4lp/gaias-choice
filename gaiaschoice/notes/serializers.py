@@ -24,7 +24,7 @@ class ProductSerializer(serializers.ModelSerializer):
     class Meta:
         model = Product 
         fields = ('id', 'name', 'description', 'images', 'path', 
-                'is_discounted' , 'discount_amount', 'reviews')
+                'is_discounted' , 'discount_amount', 'reviews', 'shop_path')
 
 class CarouselImageSerializer(serializers.ModelSerializer):
     class Meta:

@@ -48,16 +48,14 @@ class Blog extends Component {
 							</div>
 							<div className="col-12 col-md-9 order-sm-2 order-1">
 								{this.props.blogposts.blogposts.results.map((blogpost) => (
-									<div key={blogpost.id}>
+									<div className="blogpost" key={blogpost.id}>
 										<h4><span>{blogpost.title}</span></h4>
-										<p>
-											<div dangerouslySetInnerHTML={{__html:blogpost.text}}>
-											</div>
-											<br/>
-											<br/>
-											<small>Posted by {blogpost.owner_name} at {blogpost.created_at}</small>
-											<Link to={"/blog/"+blogpost.permalink}><small style={{float:"right"}}>Permalink</small></Link>
-										</p>
+										<div dangerouslySetInnerHTML={{__html:blogpost.text}}>
+										</div>
+										<br/>
+										<br/>
+										<small>Posted by {blogpost.owner_name} at {blogpost.created_at}</small>
+										<Link to={"/blog/"+blogpost.permalink}><small style={{float:"right"}}>Permalink</small></Link>
 									</div>
 								))}
 							</div>
@@ -79,20 +77,22 @@ class Blog extends Component {
 								</div>
 							</MediaQuery>
 							<div className="col-12 order-3">
-								{this.state.page !== 1 &&
-									<a href="#" className="pagination" onClick={()=>{this.handlePageClick(this.state.page-1)}}>«</a>
-								}
-								{/* basically range(count) */}
-								{[...Array(pages).keys()].map((page) => {
-									if (this.state.page !== page + 1){
-										return (<a href="#" className="pagination" onClick={()=>{this.handlePageClick(page)}}>{page + 1}</a>)
-									} else {
-										return (<span className="pagination">{page + 1}</span>)
+								<div className="pagination-container">
+									{this.state.page !== 1 &&
+										<a href="#" className="pagination" onClick={()=>{this.handlePageClick(this.state.page-1)}}>«</a>
 									}
-								})}
-								{this.state.page !== pages &&
-									<a href="#" className="pagination" onClick={()=>{this.handlePageClick(this.state.page+1)}}>»</a>
-								}
+									{/* basically range(count) */}
+									{[...Array(pages).keys()].map((page) => {
+										if (this.state.page !== page + 1){
+											return (<a href="#" className="pagination" onClick={()=>{this.handlePageClick(page)}}>{page + 1}</a>)
+										} else {
+											return (<span className="pagination">{page + 1}</span>)
+										}
+									})}
+									{this.state.page !== pages &&
+										<a href="#" className="pagination" onClick={()=>{this.handlePageClick(this.state.page+1)}}>»</a>
+									}
+								</div>
 							</div>
 						</div>
 					</div>

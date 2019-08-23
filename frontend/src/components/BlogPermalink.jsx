@@ -13,21 +13,19 @@ class BlogPermalink extends Component {
 		if (!this.props.blogposts.isLoading){
 			return(
 				<div>
-					<div className="container">
-						<div className="row">
+					<div className="container-fluid blog">
+						<div className="row blog-row">
 							<div className="col-12 text-center">
-								<h1>Blog</h1>
+								<h2 className="page-title">Blog</h2>
 							</div>
 							<div className="col-12">
-									<div >
-										<h4>{this.props.blogposts.blogposts.results[0].title}</h4>
-										<p>
-											<div dangerouslySetInnerHTML={{__html:this.props.blogposts.blogposts.results[0].text}}></div>
-											<br/>
-											<br/>
-											<small>Posted by {this.props.blogposts.blogposts.results[0].owner} at {this.props.blogposts.blogposts.results[0].created_at}</small>
-										</p>
-									</div>
+								<h4>{this.props.blogposts.blogposts.results[0].title}</h4>
+								<div className="blogpost">
+									<div dangerouslySetInnerHTML={{__html:this.props.blogposts.blogposts.results[0].text}}></div>
+									<br/>
+									<br/>
+									<small>Posted by {this.props.blogposts.blogposts.results[0].owner} at {this.props.blogposts.blogposts.results[0].created_at}</small>
+								</div>
 							</div>
 						</div>
 					</div>

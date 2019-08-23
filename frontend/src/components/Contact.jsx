@@ -54,7 +54,7 @@ class Contact extends Component {
 
 	render(){
 		return(
-			<div>
+			<div className="contact">
 			    <div className="row">
 					<div className="col-12 text-center">
 						{this.props.user_message && this.state.submitStatus && (

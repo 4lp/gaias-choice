@@ -52,7 +52,9 @@ export default class ProductDetail extends Component {
 												</div>
 											))}
 											<div className="text-center">
-												<button type="button" className="btn btn-info btn-lg"><strong>Buy now!</strong></button>
+												<a href={product[0].shop_path}>
+													<button type="button" className="btn btn-info btn-lg"><strong>Buy now!</strong></button>
+												</a>
 											</div>
 										</div>
 									</div>
